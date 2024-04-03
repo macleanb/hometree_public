@@ -1,0 +1,374 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heightsettings_addressesdisplaycontainer, .heightsettings_usersdisplaycontainer, .heightsettings_residencesdisplaycontainer, .heightsettings_announcementsdisplaycontainer, .heightsettings_policiesdisplaycontainer, .heightsettings_residencepolicychoicescontainer  {
+  height: 90vh;
+  max-height: 90vh;
+}
+
+.heightsettings_announcementcard {
+  max-height: max-content !important;
+  height: max-content !important;
+}
+
+.heightsettings_announcementcardimage {
+  height:0;
+  min-height:100%;
+}
+
+.heightsettings_announcementcardtitletext {
+  height: max-content !important;
+  min-height: max-content !important;
+  max-width: 40vw !important;
+}
+
+/* Couldn't get this to work */
+.heightsettings_imageandbodycontainer {
+  height: max-content !important;
+  min-height: max-content !important;
+}
+
+.heightsettings_announcementcardimagecontainer {
+  height: 150px;
+  /* height: 0; */
+  min-height: 100% !important;
+}
+
+.widthsettings_addresssearchfield, .widthsettings_usersearchfield, .widthsettings_residencesearchfield, .widthsettings_announcementssearchfield, .widthsettings_policiessearchfield {
+  max-width: 23vw;
+}
+
+.widthsettings_announcementssearchfieldlarge {
+  max-width: 45vw;
+}
+
+.widthsettings_announcementcardimage {
+  width: auto;
+  max-width: min-content;
+}
+
+.widthsettings_announcementcardimagecontainer {
+  width: 150px;
+  min-width: max-content;
+}
+
+.widthsettings_addressesdisplaytile, .widthsettings_usersdisplaytile, .widthsettings_residencesdisplaytile, .widthsettings_announcementsdisplaytile, .widthsettings_policiesdisplaytile {
+  width: 25vw;
+}
+
+.widthsettings_announcementsdisplaytilelarge {
+  width: 50vw;
+}
+
+.widthsettings_residencepolicychoicetile {
+  /* width: 50vw; */
+  min-width: max-content !important;
+}
+
+.colorsettings_navbackground {
+  /* background-color: #476930 !important; */
+  background-color: #FFFFFF !important;
+  /* border-color: #476930 ! important; */
+  border-color: gray ! important;
+}
+
+.colorsettings_bodyheaders {
+  color: #427b01;
+  font-weight: bold;
+}
+
+.colorsettings_listtext {
+  color: #476930 !important;
+  font-weight: bold !important;
+}
+
+.colorsettings_buttonfilled {
+  color: #FFFFFF !important;
+  font-weight: bold !important;
+  background-color: #427b01 !important;
+  border-width: 0px !important;
+}
+
+.colorsettings_buttonoutline {
+  color: #757e4e !important;
+  font-weight: bold !important;
+  border-color: #757e4e !important;
+}
+
+.colorsettings_buttonoutline:hover {
+  background-color: #476930 !important;
+  color: white !important;
+  font-weight: bold !important;
+  border-color: #929e61 !important;
+}
+
+.colorsettings_bodybackground {
+  background-color: white !important;
+  border-color: #fafcf8 !important;
+}
+
+.colorsettings_bodybackgroundhover:hover {
+  background-color: #f1f7ee !important;
+}
+
+.colorsettings_borders {
+  border-color: gray;
+}
+
+/* Announcement Card */
+.imageandbodycontainer {
+  align-items: center;
+  vertical-align: middle !important;
+}
+
+.announcementcardtitletext, .announcementcardimagecontainer {
+  margin-left: 20px !important;
+}
+
+.announcementcardtext {
+  text-align: justify !important;
+  text-indent: 2em !important;
+}
+
+/* Nav bar */
+
+.navbar {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.profileimage {
+  border-radius: 25px;
+}
+
+#logincontainer {
+  padding: 0px !important;
+  height: 100%;
+  min-height: 100vh;
+  /* background-image: linear-gradient(to bottom right, hotpink , #7DF9FF); */
+}
+
+.logintile {
+  height: fit-content;
+  width: fit-content;
+  max-width: 95vw;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid #427b01;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 1px 1px 1px #427b01;
+}
+
+.registertile {
+  height: fit-content;
+  width: fit-content;
+  max-width: 95vw;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 2px 2px 2px #c2d6fc;
+}
+
+.adminuserscontainer {
+  border-top: 1px solid gray;
+  height: 100vh;
+}
+
+.addressmanagercontainer, .announcementmanagercontainer, .usermanagercontainer, .residencemanagercontainer, .userprofilemanagercontainer, .policymanagercontainer, .policydashboardcontainer {
+  border-top: 1px solid gray;
+}
+
+.adminregistertile {
+  height: fit-content;
+  max-width: 95vw;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+.cardbody {
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#usersdisplaycontainer {
+  padding: 0px !important;
+  border-right: 1px solid gray;
+}
+
+#addressesdisplaycontainer {
+  border-right: 1px solid gray;
+}
+
+#announcementsdisplaycontainer {
+  border-right: 1px solid gray;
+}
+
+#policiesdisplaycontainer {
+  border-right: 1px solid gray;
+}
+
+#residencesdisplaycontainer {
+  border-right: 1px solid gray;
+}
+
+.addressformcontainer, .userformcontainer, .residenceformcontainer, .formcontainer, .announcementformcontainer {
+  padding-left: 80px !important;
+}
+
+.residencepolicychoicescontainer {
+  padding-left: 80px !important;
+  margin-top: 55px !important;
+}
+
+.usersdisplaytile {
+  height: fit-content;
+  max-width: 95vw;
+  max-height: 100vh;
+  overflow: auto;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+.addressesdisplaytile, .residencesdisplaytile {
+  height: fit-content;
+  max-width: 95vw;
+  overflow: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.announcementsdisplaytile {
+  height: min-content;
+  max-width: 95vw;
+  overflow: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.policiesdisplaytile {
+  height: min-content;
+  max-width: 95vw;
+  overflow: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.residencepolicychoicetile {
+  height: min-content;
+  /* max-width: 95vw; */
+  overflow: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+#adminregistercontainer, .addressform, .userform, .residenceform, .announcementform, .policyform {
+  padding: 0px !important;
+  /* border-left: 1px solid gray; */
+}
+
+
+/* From https://www.youtube.com/watch?v=X3qyxo_UTR4&t=676s */
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.ownerinputbutton, .residenceinputbutton {
+  width: 150px !important;
+}
+
+.ownerinputdiv, .residenceinputdiv {
+  width: 500px !important;
+  justify-content: space-between;
+  border: 1px solid rgb(229, 229, 229);
+}
+
+.ownerinputselect, .residenceinputselect {
+  width: 300px !important;
+}
+
+.optioninputdiv {
+  width: 530px !important;
+  justify-content: space-between;
+}
+
+.optionbutton {
+  height: 2.5rem !important;
+  margin-left: 10px !important;
+}
+
+.optioninputfield {
+  height: 2.5rem !important;
+  width: 380px !important;
+}
+.optioninputselect {
+  height: 2.5rem !important;
+  width: 380px !important;
+  border: 1px solid lightgray !important;
+}
+
+.updatepolicychoicebutton {
+  height: 2.5rem !important;
+  /* width: 270px !important; */
+  min-width: max-content !important;
+}
+
+.makepubliccheckbox {
+  align-items: center !important;
+  height: 2.5rem !important;
+  width: 270px !important;
+  min-width: max-content !important;
+}
+
+

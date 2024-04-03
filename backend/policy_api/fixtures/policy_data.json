@@ -1,0 +1,74 @@
+[
+{
+  "model": "policy_api.policy",
+  "pk": 1,
+  "fields": {
+    "statement": "The HOA President is:",
+    "question": "Who should be the HOA President?",
+    "description": "",
+    "effective_date": "2024-01-13",
+    "fk_Author": null,
+    "image": ""
+  }
+},
+{
+  "model": "policy_api.policy",
+  "pk": 2,
+  "fields": {
+    "statement": "Residents' cars can park on the street overnight:",
+    "question": "Should residents' cars be allowed to park on the street overnight?",
+    "description": "",
+    "effective_date": "2024-01-13",
+    "fk_Author": null,
+    "image": ""
+  }
+},
+{
+  "model": "policy_api.policy",
+  "pk": 3,
+  "fields": {
+    "statement": "The maximum height of residential lawns is:",
+    "question": "What should be the maximum height of residents' lawns?",
+    "description": "",
+    "effective_date": "2024-01-27",
+    "fk_Author": 1,
+    "image": ""
+  }
+},
+{
+  "model": "policy_api.policy",
+  "pk": 4,
+  "fields": {
+    "statement": "Residents must store their trashcans out of sight on non-pickup days:",
+    "question": "Should residents store their trashcans out of sight on non-pickup days?",
+    "description": null,
+    "effective_date": "2024-01-13",
+    "fk_Author": 1,
+    "image": ""
+  }
+},
+{
+  "model": "policy_api.policy",
+  "pk": 5,
+  "fields": {
+    "statement": "The HOA is disestablished:",
+    "question": "Should the HOA be disestablished?",
+    "description": null,
+    "effective_date": "2024-01-13",
+    "fk_Author": 1,
+    "image": ""
+  }
+},
+{
+  "model": "policy_api.policy",
+  "pk": 6,
+  "fields": {
+    "statement": "The maximum fine is:",
+    "question": "What should the maximum fine be?",
+    "description": null,
+    "effective_date": "2024-01-13",
+    "fk_Author": 1,
+    "image": ""
+  }
+}
+]
