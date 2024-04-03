@@ -14,6 +14,7 @@ To get started from the command line:
    * pip install -r requirements.txt
 5. Start the backend server
    * python manage.py runserver
+6. Configure the database ('hoa_db')
 
 ## Frontend
 6. Change directory to frontend.
@@ -102,9 +103,6 @@ TODO:
     - Deal with exhaustive deps warnings:
       reference: https://stackoverflow.com/questions/60620248/avoiding-eslint-react-hooks-exhaustive-deps-warnings-with-useeffect-usestate
 
-
-    Changing Griffin colapinto's mailing address is also changing a residence. (Kolohe Andino's -- User 11 owns residence 47).  AddrID: 61, residence 47 has addr 61.  Coliapinto has mailing address 61.  How did this happen?  Best guess - I logged into admin and gave
-    Colapinto mailing address 61 (using the dropdown), not realizing it was already associated with a residence.
 
 User Stories (Address):
 - Admin User creates address by providing all fields, with an image
