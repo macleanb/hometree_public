@@ -20,18 +20,19 @@ To get started from the command line:
 6. Change directory to frontend.
 7. Install dependencies
    * npm install
-8. Start the frontend server (http://localhost:3000)
+8. Configure BASE_URL in constants.js for test or production
+9. Start the frontend server (http://localhost:3000)
    * npm start
 
 ## Third-party APIs
-9. If the Google Map display doesn't show, remind the author (above) to activate the Google APIs (maps, static maps, address validation, etc.).
+10. If the Google Map display doesn't show, remind the author (above) to activate the Google APIs (maps, static maps, address validation, etc.).
 
 ## Testing
-10. In the command line, type:
+11. In the command line, type:
 npx cypress run
 
 ## Most important
-10.  Have fun, and feel free to create your own user account with a profile picture!
+12.  Have fun, and feel free to create your own user account with a profile picture!
 
 
 Design:
@@ -80,7 +81,7 @@ TODO:
       wrap backend API calls in useEffect (use 'active' variable)
              
     Backend:
-      prepend /api/ to backend proj URLs, then update frontend URLs to include /api/
+      prepend /api/v1/ to backend proj URLs, then update frontend base URL to include /api/v1/
       consolidate frontend constants urls to allow for easy replacement of URLs from localhost to AWS
       Add a neighborhood chat function
     

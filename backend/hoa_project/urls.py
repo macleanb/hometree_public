@@ -21,16 +21,16 @@ from hoa_api.views import AllUsersForAllResidencesView, AllResidencesForAllUsers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
-    path('residences/users/', AllUsersForAllResidencesView.as_view(), name='all_users_for_all_residences'),
-    path('users/residences/', AllResidencesForAllUsersView.as_view(), name='all_residences_for_all_users'),
-    path('announcements/', include('announcement_api.urls')),
-    path('residences/', include('hoa_api.urls')),
-    path('addresses/', include('address_api.urls')),
-    path('policies/', include('policy_api.urls')),
-    path('weather/', include('weather_api.urls')),
-    path('validateaddress/', include('address_validation.urls')),
-    path('map/', include('map_api.urls')),
+    path('api/v1/users/', include('users.urls')),
+    path('api/v1/residences/users/', AllUsersForAllResidencesView.as_view(), name='all_users_for_all_residences'),
+    path('api/v1/users/residences/', AllResidencesForAllUsersView.as_view(), name='all_residences_for_all_users'),
+    path('api/v1/announcements/', include('announcement_api.urls')),
+    path('api/v1/residences/', include('hoa_api.urls')),
+    path('api/v1/addresses/', include('address_api.urls')),
+    path('api/v1/policies/', include('policy_api.urls')),
+    path('api/v1/weather/', include('weather_api.urls')),
+    path('api/v1/validateaddress/', include('address_validation.urls')),
+    path('api/v1/map/', include('map_api.urls')),
 ]
 
 from django.conf import settings
