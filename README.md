@@ -18,6 +18,7 @@ To get started from the command line:
    * createdb hoa_db
    * python manage.py migrate
    * Load fixtures (in the correct order)
+   * python manage.py loaddata users/fixtures/auth_group_data_modified.js
    * python manage.py loaddata address_api/fixtures/address_data.js
    * auth groups
 6. Start the backend server
