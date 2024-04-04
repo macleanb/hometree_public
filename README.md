@@ -5,19 +5,24 @@ https://github.com/Code-Platoon-Curriculum/curriculum/blob/main/optional_lessons
 To get started from the command line:
 
 ## Backend
-1. Change directory to backend.
+0. Git pull the repo (as required)
+1. Change directory to hometree/backend.
 2. Create a virtual environment if needed.
    * python -m venv <venv_name>
 3. Activate your virtual environment
    * source <venv_name>/bin/activate (e.g. 'default')
 4. Install dependencies
    * pip install -r requirements.txt
-5. Load fixtures (in the correct order)
+5. Create/Configure the database ('hoa_db')
+   * install PostgreSQL and create superuser
+   * createdb hoa_db
+   * python manage.py migrate
+   * Load fixtures (in the correct order)
    * python manage.py loaddata address_api/fixtures/address_data.js
    * auth groups
 6. Start the backend server
    * python manage.py runserver
-7. Configure the database ('hoa_db')
+7. 
 
 ## Frontend
 8. Change directory to frontend.
