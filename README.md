@@ -17,31 +17,35 @@ To get started from the command line:
    * install PostgreSQL and create superuser
    * createdb hoa_db
    * python manage.py migrate
-   * Load fixtures (in the correct order)
-   * python manage.py loaddata users/fixtures/auth_group_data_modified.js
-   * python manage.py loaddata address_api/fixtures/address_data.js
-   * auth groups
+   * Load fixtures (in the correct order):
+    * python3 manage.py loaddata users/fixtures/auth_group_data_modified.json
+    * python3 manage.py loaddata address_api/fixtures/address_data.json
+    * python3 manage.py loaddata announcement_api/fixtures/announcement_data.json
+    * python3 manage.py loaddata hoa_api/fixtures/residence_data.json
+    * python3 manage.py loaddata hoa_api/fixtures/hoauser_residence_data.json
+    * python3 manage.py loaddata policy_api/fixtures/policy_data.json
+    * python3 manage.py loaddata policy_api/fixtures/policy_option_data.json
+    * python3 manage.py loaddata policy_api/fixtures/residence_policy_choice_data.json
 6. Start the backend server
    * python manage.py runserver
-7. 
 
 ## Frontend
-8. Change directory to frontend.
-9. Install dependencies
+7. Change directory to frontend.
+8. Install dependencies
    * npm install
-10. Configure BASE_URL in constants.js for test or production
-11. Start the frontend server (http://localhost:3000)
+9. Configure BASE_URL in constants.js for test or production
+10. Start the frontend server (http://localhost:3000)
    * npm start
 
 ## Third-party APIs
-12. If the Google Map display doesn't show, remind the author (above) to activate the Google APIs (maps, static maps, address validation, etc.).
+11. If the Google Map display doesn't show, remind the author (above) to activate the Google APIs (maps, static maps, address validation, etc.).
 
 ## Testing
-13. In the command line, type:
+12. In the command line, type:
 npx cypress run
 
 ## Most important
-14.  Have fun, and feel free to create your own user account with a profile picture!
+13.  Have fun, and feel free to create your own user account with a profile picture!
 
 
 Design:
