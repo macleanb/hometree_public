@@ -80,7 +80,12 @@ TODO:
       wrap backend API calls in useEffect (use 'active' variable)
              
     Backend:
+      prepend /api/ to backend proj URLs, then update frontend URLs to include /api/
+      consolidate frontend constants urls to allow for easy replacement of URLs from localhost to AWS
       Add a neighborhood chat function
+    
+    Deploy:
+      
 
     in UserManagerNew, after a new user is added an add new user form isn't being displayed at the top if the window width is constrained (i.e. if the developer tools window is open).  Make the windows more flexible to different sizes (mobile)
 

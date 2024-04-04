@@ -20,22 +20,9 @@ const constants = {
                     FIELD_NAME_POLICY_DESCRIPTION: 'POLICY_DESCRIPTION_FIELD',
                     FIELD_NAME_POLICY_EFFECTIVE_DATE: 'POLICY_EFFECTIVE_DATE_FIELD',
                     
-                    ADDRESS_VALIDATION_URL: 'https://addressvalidation.googleapis.com/v1:validateAddress?key=',
-                    BASE_URL: 'http://127.0.0.1:8000',
-                    LOGIN_URL: 'http://localhost:8000/users/login',
-                    LOGOUT_URL: 'http://localhost:8000/users/logout',
-                    REGISTER_URL: 'http://localhost:8000/users/register',
-                    AUTHENTICATED_USER_URL: 'http://localhost:8000/users/authenticateduser',
-                    USERS_URL: 'http://localhost:8000/users/',
-                    ADDRESSES_URL: 'http://localhost:8000/addresses/',
-                    ANNOUNCEMENTS_URL: 'http://localhost:8000/announcements/',
-                    URL_WEATHER: 'http://localhost:8000/weather/',
-                    POLICIES_URL: 'http://localhost:8000/policies/',
-                    RESIDENCES_URL: 'http://localhost:8000/residences/',
-                    ALL_USERS_FOR_ALL_RESIDENCES_URL: 'http://localhost:8000/residences/users/',
-                    ALL_RESIDENCES_FOR_ALL_USERS_URL: 'http://localhost:8000/users/residences/',
-                    URL_VALIDATE_ADDRESS: 'http://localhost:8000/validateaddress/',
-                    URL_MAP: 'http://localhost:8000/map/',
+                    BASE_URL: 'http://localhost:8000',
+                    // BASE_URL: 'ec2-3-17-59-201.us-east-2.compute.amazonaws.com/api/', // for AWS server
+
                     FORM_TYPE_USER: 'USER_FORM_TYPE',
                     FORM_TYPE_ADDRESS: 'ADDRESS_FORM_TYPE',
                     FORM_TYPE_ADDRESS_FOR_USER: 'ADDRESS_FORM_TYPE_FOR_USER',
@@ -147,6 +134,21 @@ constants['BASIC_USER_PERMISSIONS'] = constants.PERMISSIONS_CAN_VIEW_USER.concat
                                  constants.PERMISSIONS_CAN_VIEW_ADDRESS).concat(
                                  constants.PERMISSIONS_CAN_ADD_ADDRESS).concat(
                                  constants.PERMISSIONS_CAN_UPDATE_ADDRESS);
+
+constants['LOGIN_URL'] = constants.BASE_URL + '/users/login';
+constants['LOGOUT_URL'] = constants.BASE_URL + '/users/logout';
+constants['REGISTER_URL'] = constants.BASE_URL + '/users/register';
+constants['AUTHENTICATED_USER_URL'] = constants.BASE_URL + '/users/authenticateduser';
+constants['USERS_URL'] = constants.BASE_URL + '/users/';
+constants['ADDRESSES_URL'] = constants.BASE_URL + '/addresses/';
+constants['ANNOUNCEMENTS_URL'] = constants.BASE_URL + '/announcements/';
+constants['URL_WEATHER'] = constants.BASE_URL + '/weather/';
+constants['POLICIES_URL'] = constants.BASE_URL + '/policies/';
+constants['RESIDENCES_URL'] = constants.BASE_URL + '/residences/';
+constants['ALL_USERS_FOR_ALL_RESIDENCES_URL'] = constants.BASE_URL + '/residences/users/';
+constants['ALL_RESIDENCES_FOR_ALL_USERS_URL'] = constants.BASE_URL + '/users/residences/';
+constants['URL_VALIDATE_ADDRESS'] = constants.BASE_URL + '/validateaddress/';
+constants['URL_MAP'] = constants.BASE_URL + '/map/';
 
 export default constants;
 
