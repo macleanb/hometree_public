@@ -12,27 +12,30 @@ To get started from the command line:
    * source <venv_name>/bin/activate (e.g. 'default')
 4. Install dependencies
    * pip install -r requirements.txt
-5. Start the backend server
+5. Load fixtures (in the correct order)
+   * python manage.py loaddata address_api/fixtures/address_data.js
+   * auth groups
+6. Start the backend server
    * python manage.py runserver
-6. Configure the database ('hoa_db')
+7. Configure the database ('hoa_db')
 
 ## Frontend
-6. Change directory to frontend.
-7. Install dependencies
+8. Change directory to frontend.
+9. Install dependencies
    * npm install
-8. Configure BASE_URL in constants.js for test or production
-9. Start the frontend server (http://localhost:3000)
+10. Configure BASE_URL in constants.js for test or production
+11. Start the frontend server (http://localhost:3000)
    * npm start
 
 ## Third-party APIs
-10. If the Google Map display doesn't show, remind the author (above) to activate the Google APIs (maps, static maps, address validation, etc.).
+12. If the Google Map display doesn't show, remind the author (above) to activate the Google APIs (maps, static maps, address validation, etc.).
 
 ## Testing
-11. In the command line, type:
+13. In the command line, type:
 npx cypress run
 
 ## Most important
-12.  Have fun, and feel free to create your own user account with a profile picture!
+14.  Have fun, and feel free to create your own user account with a profile picture!
 
 
 Design:
