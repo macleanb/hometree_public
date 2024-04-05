@@ -3,9 +3,10 @@
   an entry in package.json.  Reference:
   https://stackoverflow.com/questions/73958968/cannot-use-import-statement-outside-a-module-with-axios
 */
-import axios from 'axios';
+//import axios from 'axios';
 import { createContext, useState, useEffect } from "react";
 import { parseAndSetAuth } from '../utils/authUtils';
+import { getClient } from '../utils/apiUtils';
 import constants from '../constants';
 
 const AuthContext = createContext({});
@@ -14,9 +15,9 @@ export const AuthProvider = ({ children }) => {
     /* Set default status of auth to 'awaiting data' */
     const [auth, setAuth] = useState({status: constants.STATUS_AWAITING_DATA});
 
-    const client = axios.create({
-        baseURL: "http://127.0.0.1:8000"
-    });
+    // const client = axios.create({
+    //     baseURL: "http://127.0.0.1:8000"
+    // });
 
     /* After this component mounts, see if user is logged in already; if not, update 
       the user state (which in turn will update the user context for all other components) 
@@ -25,8 +26,10 @@ export const AuthProvider = ({ children }) => {
     /* Only fetch from the backend if user context is null.  Ensure each of
         these dependencies (auth, navigate, client) are active
         before proceeding */
-        if (auth && auth.status && client && (auth.status === constants.STATUS_AWAITING_DATA)) {
-            client.get(constants.AUTHENTICATED_USER_URL).then(
+        // if (auth && auth.status && client && (auth.status === constants.STATUS_AWAITING_DATA)) {
+        if (auth && auth.status && (auth.status === constants.STATUS_AWAITING_DATA)) {
+            // client.get(constants.AUTHENTICATED_USER_URL).then(
+            getClient().get(constants.AUTHENTICATED_USER_URL).then(
                 function(response) {
                     if (response?.data?.user) {
                         parseAndSetAuth(response.data, setAuth);
@@ -43,7 +46,8 @@ export const AuthProvider = ({ children }) => {
                 });
 
         }
-    }, [auth, setAuth, client]); // Re-run each time a dependency comes to life
+    // }, [auth, setAuth, client]); // Re-run each time a dependency comes to life
+    }, [auth, setAuth]); // Re-run each time a dependency comes to life
 
 
     return (

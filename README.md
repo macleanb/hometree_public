@@ -89,14 +89,16 @@ TODO:
     demo ada login (can't vote yet)
     demo testadmin assign ada 104
     demo ada login (now can vote)
-    update URL patterns such as localhost:8000/api/v1/...
+
     Frontend:
       wrap backend API calls in useEffect (use 'active' variable)
+      use httponly cookies (see Adam's video and demo code)
              
     Backend:
       prepend /api/v1/ to backend proj URLs, then update frontend base URL to include /api/v1/
       consolidate frontend constants urls to allow for easy replacement of URLs from localhost to AWS
       Add a neighborhood chat function
+      sometimes getting weather results in 500 server error
     
     Deploy:
       

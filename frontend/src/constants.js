@@ -21,10 +21,25 @@ const constants = {
                     FIELD_NAME_POLICY_EFFECTIVE_DATE: 'POLICY_EFFECTIVE_DATE_FIELD',
                     
                     /* For test */
-                    // BASE_URL: 'http://localhost:8000/api/v1',
+                    BASE_URL: 'http://localhost:8000/api/v1',
 
                     /* For production & deployment */
-                    BASE_URL: 'ec2-3-144-72-108.us-east-2.compute.amazonaws.com/api/v1', // for AWS server
+                    //BASE_URL: 'ec2-3-144-72-108.us-east-2.compute.amazonaws.com/api/v1', // for AWS server
+
+                    LOGIN_URL:                        '/users/login',
+                    LOGOUT_URL:                       '/users/logout',
+                    REGISTER_URL:                     '/users/register',
+                    AUTHENTICATED_USER_URL:           '/users/authenticateduser',
+                    USERS_URL:                        '/users/',
+                    ADDRESSES_URL:                    '/addresses/',
+                    ANNOUNCEMENTS_URL:                '/announcements/',
+                    URL_WEATHER:                      '/weather/',
+                    POLICIES_URL:                     '/policies/',
+                    RESIDENCES_URL:                   '/residences/',
+                    ALL_USERS_FOR_ALL_RESIDENCES_URL: '/residences/users/',
+                    ALL_RESIDENCES_FOR_ALL_USERS_URL: '/users/residences/',
+                    URL_VALIDATE_ADDRESS:             '/validateaddress/',
+                    URL_MAP:                          '/map/',
 
                     FORM_TYPE_USER: 'USER_FORM_TYPE',
                     FORM_TYPE_ADDRESS: 'ADDRESS_FORM_TYPE',
@@ -137,21 +152,6 @@ constants['BASIC_USER_PERMISSIONS'] = constants.PERMISSIONS_CAN_VIEW_USER.concat
                                  constants.PERMISSIONS_CAN_VIEW_ADDRESS).concat(
                                  constants.PERMISSIONS_CAN_ADD_ADDRESS).concat(
                                  constants.PERMISSIONS_CAN_UPDATE_ADDRESS);
-
-constants['LOGIN_URL'] = constants.BASE_URL + '/users/login';
-constants['LOGOUT_URL'] = constants.BASE_URL + '/users/logout';
-constants['REGISTER_URL'] = constants.BASE_URL + '/users/register';
-constants['AUTHENTICATED_USER_URL'] = constants.BASE_URL + '/users/authenticateduser';
-constants['USERS_URL'] = constants.BASE_URL + '/users/';
-constants['ADDRESSES_URL'] = constants.BASE_URL + '/addresses/';
-constants['ANNOUNCEMENTS_URL'] = constants.BASE_URL + '/announcements/';
-constants['URL_WEATHER'] = constants.BASE_URL + '/weather/';
-constants['POLICIES_URL'] = constants.BASE_URL + '/policies/';
-constants['RESIDENCES_URL'] = constants.BASE_URL + '/residences/';
-constants['ALL_USERS_FOR_ALL_RESIDENCES_URL'] = constants.BASE_URL + '/residences/users/';
-constants['ALL_RESIDENCES_FOR_ALL_USERS_URL'] = constants.BASE_URL + '/users/residences/';
-constants['URL_VALIDATE_ADDRESS'] = constants.BASE_URL + '/validateaddress/';
-constants['URL_MAP'] = constants.BASE_URL + '/map/';
 
 export default constants;
 

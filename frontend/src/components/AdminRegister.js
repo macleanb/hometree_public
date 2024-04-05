@@ -1,4 +1,3 @@
-import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState, useEffect, useRef, useContext } from 'react';
@@ -6,10 +5,7 @@ import constants from '../constants';
 import AuthContext from '../contexts/AuthProvider';
 import { userIsAuthorized } from '../utils/authUtils';
 import { getResponseError } from '../utils/errorUtils';
-
-const client = axios.create({
-    baseURL: constants.BASE_URL
-  });
+import { getCSRFToken, getClient } from '../utils/apiUtils';
 
 const AdminRegister = ({ userDataChangeSwitch, setUserDataChangeSwitch }) => {
     const [auth_email, setAuth_Email] = useState('');
@@ -63,8 +59,8 @@ const AdminRegister = ({ userDataChangeSwitch, setUserDataChangeSwitch }) => {
     }, []);
   
   
-      /* Clear the error state after the user modifies the
-          username or password fields */
+    /* Clear the error state after the user modifies the
+        username or password fields */
     useEffect(() => {
         setFrontendError('');
         setBackendErrors(null);
@@ -101,16 +97,9 @@ const AdminRegister = ({ userDataChangeSwitch, setUserDataChangeSwitch }) => {
         // Since admin is logged in and there is a session, must also 
         // send the csrf token
         try {
-          //Read all cookies
-          const allCookies = document.cookie;
-    
-          // Get specific cookie (csrftoken)
-          const csrfToken = allCookies
-          .split("; ")
-          .find((row) => row.startsWith("csrftoken="))
-          ?.split("=")[1];
+          const csrfToken = getCSRFToken();
 
-          const registrationResponse = await client.post(
+          const registrationResponse = await getClient.post(
             constants.REGISTER_URL, 
             JSON.stringify(credentials), 
             {

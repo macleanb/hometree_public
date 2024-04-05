@@ -415,7 +415,8 @@ export const getAddressByID = async (auth, addrID, setBackEndErrors) => {
      // ( userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ADDRESS) && auth.user.fk_mailing_address === addrID)) {
     try {
         const addrURL = getAddressURL(addrID);
-        const response = await axios.get(addrURL);
+        // const response = await axios.get(addrURL);
+        const response = await getClient().get(addrURL);
         return await response?.data;
 
     } catch (e) {
@@ -430,12 +431,18 @@ export const getAddressByID = async (auth, addrID, setBackEndErrors) => {
 // TODO update by passing in setBackEndErrors and add to catch
 export const getAllAddressesAsArray = async (auth) => {
   if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_ADDRESSES)) {
-      try {
-          const response = await axios.get(constants.ADDRESSES_URL);
-          return await response?.data;
-      } catch (e) {
-          console.log(e);
-      }
+      // try {
+      //     const response = await axios.get(constants.ADDRESSES_URL);
+      //     return await response?.data;
+      // } catch (e) {
+      //     console.log(e);
+      // }
+    try {
+      const response = await getClient().get(constants.ADDRESSES_URL);
+      return await response?.data;
+    } catch (e) {
+        console.log(e);
+    }
   }
 }
 
@@ -443,7 +450,8 @@ export const getAllAddressesAsArray = async (auth) => {
 export const getAllAddressesAsDict = async (auth) => {
     if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_ADDRESSES)) {
         try {
-            const response = await axios.get(constants.ADDRESSES_URL);
+            // const response = await axios.get(constants.ADDRESSES_URL);
+            const response = await getClient().get(constants.ADDRESSES_URL);
             const data = await response?.data;
     
             if (data) {

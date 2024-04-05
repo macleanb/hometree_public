@@ -679,7 +679,8 @@ export const getAllResidencesAsArray = async (auth, setBackEndErrors) => {
   if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_RESIDENCES)) {
     
     try {
-      const response = await axios.get(constants.RESIDENCES_URL);
+      //const response = await axios.get(constants.RESIDENCES_URL);
+      const response = await getClient().get(constants.RESIDENCES_URL);
       
       return await response?.data;
     } catch (e) {
@@ -692,7 +693,8 @@ export const getAllResidencesAsArray = async (auth, setBackEndErrors) => {
 export const getAllResidencesAsDict = async (auth, setBackEndErrors) => {
   if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_RESIDENCES)) {
     try {
-        const response = await axios.get(constants.RESIDENCES_URL);
+        // const response = await axios.get(constants.RESIDENCES_URL);
+        const response = await getClient().get(constants.RESIDENCES_URL);
         const data = await response?.data;
 
         if (data) {
@@ -716,7 +718,8 @@ export const getAllResidencesAsDict = async (auth, setBackEndErrors) => {
 export const getAllResidenceOwnersAsDict = async (auth, setBackEndErrors) => {
   if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_USER_RESIDENCES)) {
     try {
-      const response = await axios.get(constants.ALL_USERS_FOR_ALL_RESIDENCES_URL);
+      // const response = await axios.get(constants.ALL_USERS_FOR_ALL_RESIDENCES_URL);
+      const response = await getClient().get(constants.ALL_USERS_FOR_ALL_RESIDENCES_URL);
       return await response?.data;
     } catch (e) {
         console.log(e);
@@ -731,7 +734,8 @@ export const getAllResidenceOwnersAsDict = async (auth, setBackEndErrors) => {
 export const getAllResidencesByOwnerAsDict = async (auth, setBackEndErrors) => {
   if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_USER_RESIDENCES)) {
     try {
-      const response = await axios.get(constants.ALL_RESIDENCES_FOR_ALL_USERS_URL);
+      // const response = await axios.get(constants.ALL_RESIDENCES_FOR_ALL_USERS_URL);
+      const response = await getClient().get(constants.ALL_RESIDENCES_FOR_ALL_USERS_URL);
       return await response?.data;
     } catch (e) {
         console.log(e);
@@ -750,7 +754,7 @@ export const getResidenceByID = async (auth, residenceID, setBackEndErrors) => {
          userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_RESIDENCE)) {
       try {
           const residenceURL = getResidenceURL(residenceID);
-          const response = await axios.get(residenceURL);
+          const response = await getClient().get(residenceURL);
           return await response?.data;
       } catch (e) {
           console.log(e);
@@ -769,7 +773,8 @@ export const getUsersForResidence = async (auth, residenceID, setBackEndErrors) 
     )
   {
     try {
-      const response = await axios.get(getUsersForResidenceURL(residenceID));
+      // const response = await axios.get(getUsersForResidenceURL(residenceID));
+      const response = await getClient().get(getUsersForResidenceURL(residenceID));
       
       return await response?.data;
     } catch (e) {

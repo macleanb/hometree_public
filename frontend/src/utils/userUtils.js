@@ -463,12 +463,18 @@ export const addUser = async (auth, userData, setFrontEndErrors, setBackEndError
 /* Gets all users from backend as array */
 export const getAllUsersAsArray = async (auth) => {
   if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_USERS)) {
-      try {
-          const response = await axios.get(constants.USERS_URL);
-          return await response?.data;
-      } catch (e) {
-          console.log(e);
-      }
+      // try {
+      //     const response = await axios.get(constants.USERS_URL);
+      //     return await response?.data;
+      // } catch (e) {
+      //     console.log(e);
+      // }
+    try {
+      const response = await getClient().get(constants.USERS_URL);
+      return await response?.data;
+    } catch (e) {
+        console.log(e);
+    }
   }
 }
 
@@ -479,7 +485,8 @@ let result = {};
 if (userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_USERS)) {
 
     try {
-        const response = await axios.get(constants.USERS_URL);
+        // const response = await axios.get(constants.USERS_URL);
+        const response = await getClient().get(constants.USERS_URL);
         const data = await response?.data;
 
         if (data) {
@@ -506,7 +513,13 @@ if ( userIsAuthorized(auth, constants.PERMISSIONS_CAN_VIEW_ALL_USERS) ||
   try {
       const userURL = getUserURL(userID);
       
-      const response = await axios.get(
+      // const response = await axios.get(
+      //   userURL,
+      //   {
+      //     withCredentials: true
+      //   }
+      //   );
+      const response = await getClient().get(
         userURL,
         {
           withCredentials: true
@@ -723,7 +736,14 @@ export const deleteUser = async (auth, userIDToDelete, setFrontEndErrors, setBac
 }
 
 /* Makes an API call to self-register a new user to the backend */
-export const registerUser = async (auth, userData, setFrontEndErrors, setBackEndErrors, setSuccessMessages) => {
+export const registerUser = async (
+  auth,
+  userData,
+  setFrontEndErrors,
+  setBackEndErrors,
+  setSuccessMessages
+  ) => 
+{
   /* Don't require constants.PERMISSIONS_CAN_ADD_USER because new
      users must be able to self-register. */
   try {
@@ -732,7 +752,6 @@ export const registerUser = async (auth, userData, setFrontEndErrors, setBackEnd
     const validationErrors = getUserValidationErrors(userData);
 
     if (!validationErrors) {
-      const client = getClient();
       const form_data = new FormData();
 
       if (userData) {
@@ -764,20 +783,16 @@ export const registerUser = async (auth, userData, setFrontEndErrors, setBackEnd
         }
       }
       
-      if (client) {
-        const response = await client.post(
-          constants.REGISTER_URL,
-          form_data,
-          {
-            headers: { 'Content-Type': 'multipart/form-data'
-            },
-            withCredentials: true
-          }
-        );
-        return await response?.data;
-      } else {
-        throw new Error('Error in apiUtils: CSRF Token null or bad Axios client.');
-      }
+      const response = await getClient().post(
+        constants.REGISTER_URL,
+        form_data,
+        {
+          headers: { 'Content-Type': 'multipart/form-data'
+          },
+          withCredentials: true
+        }
+      );
+      return await response?.data;
     }  else {
       // Rely on built-in reportValidity() call in handleClick function
       // setFrontEndErrors(validationErrors);
