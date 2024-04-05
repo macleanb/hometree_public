@@ -21,10 +21,11 @@ const constants = {
                     FIELD_NAME_POLICY_EFFECTIVE_DATE: 'POLICY_EFFECTIVE_DATE_FIELD',
                     
                     /* For test */
-                    BASE_URL: 'http://localhost:8000/api/v1',
+                    //BASE_URL: 'http://localhost:8000/api/v1',
 
                     /* For production & deployment */
                     //BASE_URL: 'ec2-3-144-72-108.us-east-2.compute.amazonaws.com/api/v1', // for AWS server
+                    BASE_URL: '', // for AWS server
 
                     LOGIN_URL:                        '/users/login',
                     LOGOUT_URL:                       '/users/logout',
