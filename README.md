@@ -85,12 +85,11 @@ Pale Rose: #F1DDDF
 
 
 TODO:
-    commit & push backend settings.py update to amz
-    restart gunicorn and nginx
-    try to login again
+  report addressFormValidity isn't updating formData with lat and lng
+  so that residenceUtils.addResidence can append lat and lng to data
+  in api call to create a residence
+  Ada should be able to see her house (104) on a map
 
-    demo basic homepage and header links
-    demo ada login (can't vote yet)
     demo testadmin assign ada 104
     demo ada login (now can vote)
 
@@ -105,7 +104,8 @@ TODO:
       sometimes getting weather results in 500 server error
     
     Deploy:
-      
+      Add images to users/residences
+      get https working (watch Adam's video)
 
     in UserManagerNew, after a new user is added an add new user form isn't being displayed at the top if the window width is constrained (i.e. if the developer tools window is open).  Make the windows more flexible to different sizes (mobile)
 
