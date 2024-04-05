@@ -33,17 +33,21 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:3000',
-#     'http://127.0.0.1:3000',
-#     'http://localhost', # for jest
-# ]
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://localhost', # for jest
+    'http://127.0.0.1',
+    'https://127.0.0.1'
+]
 
 # Does this contradict the line above?
 CORS_ORIGIN_ALLOW_ALL = True
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.127.0.0.1',
+    'http://127.0.0.1',
+    'https://127.0.0.1',
     'http://localhost:3000',
     'http://ec2-3-144-72-108.us-east-2.compute.amazonaws.com',
     'https://ec2-3-144-72-108.us-east-2.compute.amazonaws.com' 
