@@ -85,6 +85,10 @@ Pale Rose: #F1DDDF
 
 
 TODO:
+    commit & push backend settings.py update to amz
+    restart gunicorn and nginx
+    try to login again
+
     demo basic homepage and header links
     demo ada login (can't vote yet)
     demo testadmin assign ada 104
