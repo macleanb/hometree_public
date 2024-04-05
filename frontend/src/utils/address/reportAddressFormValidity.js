@@ -12,7 +12,7 @@ import convertGAPIAddressComponentToName from './convertGAPIAddressComponentToNa
     - boolean: true if data is valid, false otherwise */
 const reportAddressFormValidity = async (formData, elementRefs, setBackEndErrors) => {
   let externalValidity = false;
-
+  
   /* Check built-in form validation first. */
   let form;
   form = document.getElementById("address-form");
@@ -28,13 +28,13 @@ const reportAddressFormValidity = async (formData, elementRefs, setBackEndErrors
   if (builtInValidity) {
     const response = await getGAPIAddressValidationData(formData, null, setBackEndErrors);
     
-    let suggestion
+    let suggestion;
     if (response?.data && Object.keys(response?.data).length > 0) {
       suggestion = await suggestValidationAction(response.data, setBackEndErrors);
     } else {
       throw new Error('Response data in reportAddressFormValidity was empty');
     }
-
+    
     const updatedBackEndErrors = {};
     const addressComponents = response.data.result.result.address.addressComponents;
 
@@ -100,11 +100,11 @@ const reportAddressFormValidity = async (formData, elementRefs, setBackEndErrors
         externalValidity = true; // Just accept the address and update
         
         if (
-          response?.data?.result?.geocode?.location?.latitude &&
-          response?.data?.result?.geocode?.location?.longitude
+          response?.data?.result?.result?.geocode?.location?.latitude &&
+          response?.data?.result?.result?.geocode?.location?.longitude
         ) {
-          formData['lat'] = response.data.result.geocode.location.latitude;
-          formData['lng'] = response.data.result.geocode.location.longitude;
+          formData['lat'] = response.data.result.result.geocode.location.latitude;
+          formData['lng'] = response.data.result.result.geocode.location.longitude;
         }
       }
     } else if (suggestion?.suggestedAction === 'ACCEPT') {
@@ -112,11 +112,11 @@ const reportAddressFormValidity = async (formData, elementRefs, setBackEndErrors
       externalValidity = true;
       
       if (
-        response?.data?.result?.geocode?.location?.latitude &&
-        response?.data?.result?.geocode?.location?.longitude
+        response?.data?.result?.result?.geocode?.location?.latitude &&
+        response?.data?.result?.result?.geocode?.location?.longitude
       ) {
-        formData['lat'] = response.data.result.geocode.location.latitude;
-        formData['lng'] = response.data.result.geocode.location.longitude;
+        formData['lat'] = response.data.result.result.geocode.location.latitude;
+        formData['lng'] = response.data.result.result.geocode.location.longitude;
       }
     }
   }

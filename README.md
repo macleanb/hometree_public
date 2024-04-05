@@ -85,14 +85,6 @@ Pale Rose: #F1DDDF
 
 
 TODO:
-  report addressFormValidity isn't updating formData with lat and lng
-  so that residenceUtils.addResidence can append lat and lng to data
-  in api call to create a residence
-  Ada should be able to see her house (104) on a map
-
-    demo testadmin assign ada 104
-    demo ada login (now can vote)
-
     Frontend:
       wrap backend API calls in useEffect (use 'active' variable)
       use httponly cookies (see Adam's video and demo code)
