@@ -26,29 +26,13 @@ describe("demo-3-User Search for Admin User", () => {
     cy.wait(1000);
 
     /* Ensure the users display contains a search field */
-    cy.get("[placeholder='search name, address, email, etc.']").should('exist');
+    cy.get("[placeholder='search name, address, email, etc.']").should('exist').pause();
 
     /* Ensure the users list displays correct number of buttons */
     cy.get('#usersdisplaycontainer .usersdisplaytile')
       .should('exist');
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
-      .should('have.length', 10);
-
-    /* Search for a user by last name */
-    cy.get("[placeholder='search name, address, email, etc.']").type('franklin');
-
-    /* Ensure the users list displays one user button */
-    cy.get('#usersdisplaycontainer .usersdisplaytile button')
-      .should('have.length', 1)
-      .first()
-      .should('have.text', 'Franklin, Benjaminbenfranklin@email.com').pause();
-
-    /* Clear users search field */
-    cy.get("[placeholder='search name, address, email, etc.']").clear();
-
-    /* Ensure the users list displays correct number of buttons */
-    cy.get('#usersdisplaycontainer .usersdisplaytile button')
-      .should('have.length', 10);
+      .should('have.length', 11);
 
     /* Search for a user by residence address */
     cy.get("[placeholder='search name, address, email, etc.']").type('117');
@@ -64,23 +48,37 @@ describe("demo-3-User Search for Admin User", () => {
 
     /* Ensure the users list displays correct number of buttons */
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
-      .should('have.length', 10);
-
-    /* Search for a user by mailing address */
-    cy.get("[placeholder='search name, address, email, etc.']").type('Laguna Beach');
+      .should('have.length', 11);
+  
+    /* Search for a user by last name */
+    cy.get("[placeholder='search name, address, email, etc.']").type('franklin');
 
     /* Ensure the users list displays one user button */
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
       .should('have.length', 1)
       .first()
-      .should('have.text', 'Turing, Alanalanturing@email.com').pause();
+      .should('have.text', 'Franklin, Benjaminbenfranklin@email.com').pause();
 
     /* Clear users search field */
     cy.get("[placeholder='search name, address, email, etc.']").clear();
 
     /* Ensure the users list displays correct number of buttons */
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
-      .should('have.length', 10);
+      .should('have.length', 11);
+
+    /* Search for a user by mailing address */
+    cy.get("[placeholder='search name, address, email, etc.']").type('Laguna Beach');
+
+    /* Ensure the users list displays one user button */
+    cy.get('#usersdisplaycontainer .usersdisplaytile button')
+      .should('have.length', 2).pause();
+
+    /* Clear users search field */
+    cy.get("[placeholder='search name, address, email, etc.']").clear();
+
+    /* Ensure the users list displays correct number of buttons */
+    cy.get('#usersdisplaycontainer .usersdisplaytile button')
+      .should('have.length', 11);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

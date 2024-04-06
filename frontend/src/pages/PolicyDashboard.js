@@ -279,7 +279,7 @@ const PolicyDashboard = () => {
          currentCommunityPolicy state */
       const residencePolicyChoiceFreqs = frequencyCounter(residencePolicyChoicesDataArr, 'fk_PolicyOption', 'id', [-1]);
       if (residencePolicyChoiceFreqs?._totalCount >= 0) {
-        let mostFrequentPolicyOption = { option_text: 'N/A (votes are tied or non-existent' }
+        let mostFrequentPolicyOption = { option_text: 'N/A - votes are tied or non-existent' }
         const maxFrequency = residencePolicyChoiceFreqs['_maxFreq'];
         const totalCount = rawResidencePolicyChoices.length;
         const percentage = totalCount > 0 ? (maxFrequency / totalCount)*100 : 0;

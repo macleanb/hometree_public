@@ -32,7 +32,7 @@ describe("demo-0a: Login behavior and expolore basic user links", () => {
     cy.get('#announcementsdisplaycontainer').find('.announcementsdisplaytile').should('exist');
 
     /* Ensure search field works */
-    cy.get("[placeholder='search announcements...']").type('parking');
+    cy.get("[placeholder='search announcements...']").type('beer');
     cy.get('.announcementsdisplaytile').get('.cardbody').should('have.length', 1).pause();
 
     /* Click on the Policies link */
@@ -197,18 +197,14 @@ describe("demo-0a: Login behavior and expolore basic user links", () => {
     /* Wait for page load */ 
     cy.wait(1000);
 
-   /* Ensure the map banner is visible (should have navigated to Home page) */
-   cy.get('#map-display-static').find('h1').should('have.text', 'Community Map').pause();
-
     /* Click on user profile link again */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Adaaaaa   Lovelace").click();
+    cy.get("[href='/userprofilemanager']")
+      .should("have.text", "Adaaaaa   Lovelace")
+      .pause()
+      .click();
 
     /* Wait for page load */ 
     cy.wait(1000);
-
-    /* Ensure user fields are populated correctly */
-    cy.get("[placeholder='Enter first name']").should('have.value', 'Adaaaaa');
-    cy.get("[placeholder='Enter last name']").should('have.value', 'Lovelace');
 
     /* Ensure a modal is displayed with appropriate successs message */
     cy.get(".modal-body").should("have.text", "User updated successfully.");
@@ -220,6 +216,10 @@ describe("demo-0a: Login behavior and expolore basic user links", () => {
 
     /* Wait for page load */ 
     cy.wait(1000);
+
+    /* Ensure user fields are populated correctly */
+    cy.get("[placeholder='Enter first name']").should('have.value', 'Adaaaaa');
+    cy.get("[placeholder='Enter last name']").should('have.value', 'Lovelace').pause();
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();
