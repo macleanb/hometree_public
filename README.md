@@ -86,12 +86,17 @@ Pale Rose: #F1DDDF
 
 TODO:
     Frontend:
+      demo policy CRUD
+      demo user search
+      responsive shrinking 
       wrap backend API calls in useEffect (use 'active' variable)
+      enable https
       use httponly cookies (see Adam's video and demo code)
              
     Backend:
-      prepend /api/v1/ to backend proj URLs, then update frontend base URL to include /api/v1/
-      consolidate frontend constants urls to allow for easy replacement of URLs from localhost to AWS
+      enable https
+      enable domain name/dns
+      enable httponly cookies
       Add a neighborhood chat function
       sometimes getting weather results in 500 server error
     
