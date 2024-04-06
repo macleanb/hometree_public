@@ -86,7 +86,6 @@ Pale Rose: #F1DDDF
 
 TODO:
     Frontend:
-      demo policy CRUD
       demo user search
       responsive shrinking 
       wrap backend API calls in useEffect (use 'active' variable)
