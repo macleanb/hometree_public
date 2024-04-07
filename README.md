@@ -100,6 +100,7 @@ TODO:
       sometimes getting weather results in 500 server error
     
     Deploy:
+      If all tests pass, add, commit ('removed SessionAuthentication from Login') & push. Then pull from AWS & restart
       Add images to users/residences
       get https working (watch Adam's video)
 

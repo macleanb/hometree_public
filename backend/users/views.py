@@ -193,7 +193,7 @@ class UserLogin(APIView):
     permission_classes = (permissions.AllowAny,)
 
     # TODO: is this declaration necessary here?  We don't have it in UserRegister above...
-    authentication_classes = (SessionAuthentication,)
+    # authentication_classes = (SessionAuthentication,)
 
     # Sometimes get requests that require login will redirect to login
     # just handle it by responding with a blank Response 200
