@@ -16,9 +16,10 @@ To get started from the command line:
 5. Create/Configure the database ('hoa_db')
    * install PostgreSQL and create superuser
    * createdb hoa_db
-   * python manage.py migrate
+   * python manage.py migrate 
    * Load fixtures (in the correct order):
     * python3 manage.py loaddata users/fixtures/auth_group_data_modified.json
+    * python3 manage.py loaddata users/fixtures/user_data.json
     * python3 manage.py loaddata address_api/fixtures/address_data.json
     * python3 manage.py loaddata announcement_api/fixtures/announcement_data.json
     * python3 manage.py loaddata hoa_api/fixtures/residence_data.json
