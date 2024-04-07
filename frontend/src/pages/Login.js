@@ -1,8 +1,4 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Imports */
 import axios from 'axios';
 import React, {
   useState,
@@ -12,11 +8,12 @@ import React, {
 } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/* Internal Libraries */
+/* Internal Imports */
 import AuthContext from '../contexts/AuthProvider';
 import BackEndErrorContext from '../contexts/BackEndErrorProvider';
 import constants from '../constants';
-import ErrorDisplay from '../components/ErrorDisplay'
+import ErrorDisplay from '../components/ErrorDisplay';
+import ExperimentalLoginImage from '../components/ExperimentalLoginImage';
 import FrontEndErrorContext from '../contexts/FrontEndErrorProvider';
 import LoginForm from '../forms/LoginForm';
 import logo from '../HTfulllogo.png';
@@ -145,9 +142,10 @@ const Login = () => {
 
 
   return (
-    <div id="logincontainer" className="d-flex justify-content-center align-items-center">
+    <div id="logincontainer" className="d-flex flex-wrap justify-content-center align-items-center">
       <ErrorDisplay />
-      <img src={ logo } className="ms-5" width={1000} height={750} alt="hometree logo"></img>
+      {/* <img src={ logo } className="ms-5" width={1000} height={750} alt="hometree logo"></img> */}
+      <ExperimentalLoginImage />
       <div className="logintile center">
         <h1>Sign In</h1>
         <br/>

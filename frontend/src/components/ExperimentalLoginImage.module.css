@@ -1,0 +1,22 @@
+.size {
+  --iphone-width: 320px;
+  max-width: calc(100vw - var(--iphone-width));
+  min-width: calc(var(--iphone-width) - 30px);
+  width: 1000px;
+  height: auto;
+}
+
+/* @media (max-width: calc(2 * --var(--iphone-width))) { */
+@media (max-width: 556px) {
+  /* For mobile phones: */
+  .size {
+    /* --iphone-width: 320px; */
+    margin: 0px !important;
+    /* width: calc(var(--iphone-width) - 30px);
+    min-width: calc(var(--iphone-width) - 30px);
+    max-height: 39px;
+    height: 39px;
+    object-fit: cover;
+    object-position: 0 46%; */
+  }
+}
