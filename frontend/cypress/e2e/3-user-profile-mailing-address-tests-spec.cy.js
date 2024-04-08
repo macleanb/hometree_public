@@ -11,7 +11,7 @@ describe("3-User Profile Mailing Address Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Wait for page load */ 
     cy.wait(1000);
@@ -340,7 +340,7 @@ describe("3-User Profile Mailing Address Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Wait for page to load */
     cy.wait(1000);

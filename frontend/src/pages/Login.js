@@ -13,10 +13,10 @@ import AuthContext from '../contexts/AuthProvider';
 import BackEndErrorContext from '../contexts/BackEndErrorProvider';
 import constants from '../constants';
 import ErrorDisplay from '../components/ErrorDisplay';
-import ExperimentalLoginImage from '../components/ExperimentalLoginImage';
+import LoginImage from '../components/LoginImage';
 import FrontEndErrorContext from '../contexts/FrontEndErrorProvider';
+import { Link } from 'react-router-dom';
 import LoginForm from '../forms/LoginForm';
-import logo from '../HTfulllogo.png';
 import { parseAndSetAuth } from '../utils/authUtils';
 import reportLoginFormValidity from '../utils/reportLoginFormValidity';
 import {
@@ -136,16 +136,10 @@ const Login = () => {
     }
   }
 
-  const handleSignUpClicked = (e) => {
-    navigate('/register');
-  }
-
-
   return (
     <div id="logincontainer" className="d-flex flex-wrap justify-content-center align-items-center">
       <ErrorDisplay />
-      {/* <img src={ logo } className="ms-5" width={1000} height={750} alt="hometree logo"></img> */}
-      <ExperimentalLoginImage />
+      <LoginImage />
       <div className="logintile center">
         <h1>Sign In</h1>
         <br/>
@@ -161,7 +155,7 @@ const Login = () => {
           }
         />
         <br/>
-        <a href='' onClick={ handleSignUpClicked }>Sign Up</a>
+        <Link to="/register">Sign Up</Link>
       </div>
     </div>
   );

@@ -27,10 +27,12 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
     /* Wait for page to load */
     cy.wait(1000);
 
-    cy.get('.residenceformcontainer h1').contains('New Residence Information').should('exist');
+    cy.get('.residenceformcontainer h1')
+      .contains('New Residence Information')
+      .should('exist');
 
     /* Wait for page to load */
-    cy.wait(1000)
+    cy.wait(1000);
 
     /* Ensure Residences List is visible */
     /* Ensure the residences banner is visible */
@@ -40,7 +42,8 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
     cy.get("[placeholder='search name, address, email, etc.']").should('exist')
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 14);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
+      .should('have.length', 14);
 
     /* Attempt to create a new residence with missing street field*/
     cy.get('.residenceformcontainer')
@@ -50,7 +53,7 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
       .click();
 
     /* Wait for page to load */
-    cy.wait(1000)
+    cy.wait(1000);
 
     /* Ensure appropriate warnings are displayed */
     cy.get("#STREET_FIELD").then(($input) => {
@@ -222,7 +225,7 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
       .click();
 
     /* Wait for page to update */
-    cy.wait(1000).pause();
+    cy.wait(1000);
 
     /* Search for a residence by street number */
     cy.get("[placeholder='search name, address, email, etc.']").type('104').pause();

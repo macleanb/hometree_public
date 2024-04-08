@@ -11,7 +11,7 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Ensure page banner is displayed */
     cy.get("div h1").should("have.text", "New User Information");
@@ -66,7 +66,7 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Ensure page banner is displayed */
     cy.get("div h1").should("have.text", "New User Information");
@@ -98,7 +98,7 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Ensure page banner is displayed */
     cy.get("div h1").should("have.text", "New User Information");
@@ -140,7 +140,7 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Ensure page banner is displayed */
     cy.get("div h1").should("have.text", "New User Information");
@@ -174,7 +174,7 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Ensure page banner is displayed */
     cy.get("div h1").should("have.text", "New User Information");
@@ -208,7 +208,7 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Ensure page banner is displayed */
     cy.get("div h1").should("have.text", "New User Information");
@@ -242,7 +242,7 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Click the 'Sign Up' link */
-    cy.get("[href='']").should("have.text", "Sign Up").click();
+    cy.get("[href='/register']").should("have.text", "Sign Up").click();
 
     /* Ensure page banner is displayed */
     cy.get("div h1").should("have.text", "New User Information");

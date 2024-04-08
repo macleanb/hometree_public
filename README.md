@@ -62,45 +62,23 @@ Feature a custom user model on the backend with authentication, permissions to a
    access on the backend and auth/permissions-based routing/conditional nav displays/api calls on the front end
 It will feature reusable, composite forms that support nexted CRUD (users, addresses, residences)
 
-Color pallete:
-The green I like: #427b01
-Dell: #476930 (nav bar)  ( 95% lighter: #f1f7ee for bodybackgroundhover 98% lighter: #fafcf8 for bodybackground)
-Salem: #159947 (a lighter green)
-Ocean Green: #49B265
-Chelsea Cucumber: #868049
-Observatory: #00917C (a lighter green with blue)
-Madang: #8DD99E
-Green Smoke: #95AA63 (listtext alternative)
-Green Mist: #B7BF96 (decent light brown/green listtext= 40% lightness version #757e4e)
-Magic Mint: #A5F0C5 (not good)
-Pale Leaf: #BFCAB4
-Rice Flower: #DFF5CE (nav bar brand text)
-Yuma: #C8888A (pinkish)
-Tusk: #E4DEAE (nav bar link text)
-Eden: #1F5F5B
-Kashmir Blue: #525888
-Lavender: #DEE2FC
-Chardonnay: #FFC06E
-Maverick: #BFA8BB
-Pale Rose: #F1DDDF
-
 
 TODO:
     Frontend:
-      responsive shrinking 
+      responsive shrinking - basic users policies page
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
       use httponly cookies (see Adam's video and demo code)
              
     Backend:
+        sometimes getting weather results in 500 server error
       enable https
       enable domain name/dns
       enable httponly cookies
       Add a neighborhood chat function
-      sometimes getting weather results in 500 server error
     
     Deploy:
-      If all tests pass, add, commit ('removed SessionAuthentication from Login') & push. Then pull from AWS & restart
+      Register (Sign Up) link pops up and then returns 404, and navigating directly to /login doesnt work
       Add images to users/residences
       get https working (watch Adam's video)
 
