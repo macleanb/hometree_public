@@ -1,5 +1,6 @@
 """ Views for external weather_api app """
 # External Imports
+import os
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from rest_framework.settings import api_settings
@@ -70,6 +71,12 @@ class Map(APIView):
             context={"image_data" : decoded_str, "image_description" : "a google map"},
             request=request
         )
+
+        # Remove file
+        # my_path = os.path.abspath(os.path.dirname(__file__))
+        # whole_file_path = os.path.join(my_path, 'map.png')
+        # if os.path.exists(whole_file_path):
+        #     os.remove(whole_file_path)
 
         return JsonResponse(
             {

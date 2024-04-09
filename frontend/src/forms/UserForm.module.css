@@ -1,0 +1,41 @@
+.button_container_size {
+  max-width: 100vw;
+}
+
+.button_clear_size {
+  height: 40px;
+  max-height: 40px;
+  margin-top: 15px;
+}
+
+.button_size {
+  --iphone-width: 320px;
+  width: calc(2 * var(--iphone-width));
+  max-width: calc(100vw - 200px);
+  min-width: var(--iphone-width);
+}
+
+.container_button_clear {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.header_size {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+}
+
+.image_container_size {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100vw;
+}
+
+.image_input_size {
+  --iphone-width: 320px;
+  width: var(--iphone-width);
+  min-width: var(--iphone-width);
+}

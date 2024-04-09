@@ -1,13 +1,10 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Imports */
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-/* Internal Libraries */
+/* Internal Imports */
 import constants from '../constants';
+import styles from './ImageInput.module.css';
 
 /* This component provides an input field and controls for images, to be used in forms */
 const ImageInput = ({
@@ -20,8 +17,8 @@ const ImageInput = ({
 }) => 
 {
   return (
-    <div className={ `d-flex flex-wrap justify-content-center align-items-center ${ bootstrapSettings ? bootstrapSettings : 'mb-4' }` }>
-      <Form.Group className="mb-3 ms-1 me-1 text-start" controlId={ constants.IMAGE_FIELD_NAME }>
+    <div className={ `${styles.containersize} d-flex justify-content-center ${ bootstrapSettings ? bootstrapSettings : 'mb-4' }` }>
+      <Form.Group className={`${styles.size} mb-3 ms-1 me-1 text-start`} controlId={ constants.IMAGE_FIELD_NAME }>
         <Form.Label className="colorsettings_listtext">{ backendImageExists && updateDeleteMode ? "Replace existing image" : "Image"}</Form.Label>
         <Form.Control className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="file" 

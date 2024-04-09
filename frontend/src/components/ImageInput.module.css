@@ -1,0 +1,8 @@
+.containersize {
+  max-width: 100vw;
+}
+
+.size {
+  --iphone-width: 320px;
+  min-width: calc(var(--iphone-width) - 50);
+}

@@ -1,30 +1,14 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Imports */
 import { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 
-/* Internal Libraries */
+/* Internal Imports */
 import constants from '../constants';
 import FrontEndErrorContext from '../contexts/FrontEndErrorProvider';
+import styles from './UserInputs.module.css';
 
 /* This component provides input fields for users, to be used in forms */
 const UserInputs = ( { userData, onChange, parentRefs, mode } ) => {
-
-
-  //////////////////////
-  ///   Use Effects  ///
-  //////////////////////
-
-  /* This is handled by autoFocus below.  We can't monitor refs with useEffect */
-  // useEffect(() => {
-  //   if (parentRefs?.inputEmailRef?.current) {
-  //     parentRefs.inputEmailRef.current.focus();
-  //   }
-  // }, []);
-
 
   ///////////////////////
   ///   Declarations  ///
@@ -33,9 +17,9 @@ const UserInputs = ( { userData, onChange, parentRefs, mode } ) => {
   const { frontEndErrors } = useContext(FrontEndErrorContext);
 
   return (
-    <div>
-      <div className="d-flex flex-wrap justify-content-evenly">
-        <Form.Group className="mb-4 text-start" controlId={ constants.AUTH_EMAIL_FIELD_NAME }>
+    <>
+      <div className={`${styles.emailpasswordcontainer}`}>
+        <Form.Group className={`${styles.inputsize} mb-4 text-start`} controlId={ constants.AUTH_EMAIL_FIELD_NAME }>
           <Form.Label className="colorsettings_listtext">E-mail</Form.Label>
           <Form.Control 
             type="email" 
@@ -59,7 +43,7 @@ const UserInputs = ( { userData, onChange, parentRefs, mode } ) => {
             )
           }
         </Form.Group>
-        <Form.Group className="mb-4 text-start" controlId={ constants.PASSWORD_FIELD_NAME }>
+        <Form.Group className={`${styles.inputsize} mb-4 text-start`} controlId={ constants.PASSWORD_FIELD_NAME }>
           <Form.Label className="colorsettings_listtext">{`${ (mode === constants.MODE_USER_UPDATE_DELETE || mode === constants.MODE_USER_PROFILE) ? 'New ' : ''}Password`}</Form.Label>
           <Form.Control 
             type="password" 
@@ -83,8 +67,8 @@ const UserInputs = ( { userData, onChange, parentRefs, mode } ) => {
           }
         </Form.Group>
       </div>
-      <div className="d-flex flex-wrap justify-content-evenly">
-        <Form.Group className="mb-4 text-start" controlId={ constants.FIRST_NAME_FIELD_NAME }>
+      <div className={styles.firstlastnamecontainer}>
+        <Form.Group className={`${styles.inputsize} mb-4 text-start`} controlId={ constants.FIRST_NAME_FIELD_NAME }>
           <Form.Label className="colorsettings_listtext">First Name</Form.Label>
           <Form.Control 
             type="text" 
@@ -107,7 +91,7 @@ const UserInputs = ( { userData, onChange, parentRefs, mode } ) => {
             )
           }
         </Form.Group>
-        <Form.Group className="mb-4 text-start" controlId={ constants.LAST_NAME_FIELD_NAME }>
+        <Form.Group className={`${styles.inputsize} mb-4 text-start`} controlId={ constants.LAST_NAME_FIELD_NAME }>
           <Form.Label className="colorsettings_listtext">Last Name</Form.Label>
           <Form.Control 
             type="text" 
@@ -131,7 +115,7 @@ const UserInputs = ( { userData, onChange, parentRefs, mode } ) => {
           }
         </Form.Group>
       </div>
-    </div>
+    </>
   );
 }
 

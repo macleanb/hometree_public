@@ -1,12 +1,8 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Imports */
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/* Internal Libraries */
+/* Internal Imports */
 import AuthContext from '../contexts/AuthProvider';
 import BackEndErrorContext from '../contexts/BackEndErrorProvider';
 import constants from '../constants';
@@ -21,7 +17,7 @@ import {
   getUserByID,
   updateUser
 } from '../utils/userUtils';
-
+import styles from './SelfRegistration.module.css';
 
 /*  This component renders an image and a generic FormContainer that allows
     new Users to create user objects and mailing Addresses (for themselves) */
@@ -49,7 +45,6 @@ const SelfRegistration = () => {
 
   /* Other Declarations */
   const navigate = useNavigate();
-
 
   ////////////////////////
   /// Helper Functions ///
@@ -148,7 +143,7 @@ const SelfRegistration = () => {
           }
         }/>
         <div className="d-flex flex-wrap justify-content-start">
-          <div className="d-flex me-5 flex-column flex-fill formcontainer">
+          <div className={`d-flex flex-column align-items-center flex-fill`}>
             <FormManager
               formData={ formData }
               formType={ formType }

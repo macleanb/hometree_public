@@ -65,7 +65,7 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
-      responsive shrinking - basic users policies page
+      responsive shrinking - self-register page, basic users policies page
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
       use httponly cookies (see Adam's video and demo code)
