@@ -53,7 +53,7 @@
 }
 
 .heightsettings_announcementcardtitletext {
-  height: max-content !important;
+  /* height: max-content !important; */
   min-height: max-content !important;
   max-width: 40vw !important;
 }

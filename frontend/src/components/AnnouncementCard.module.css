@@ -1,0 +1,16 @@
+.image_size {
+  width: 15vw;
+  height: auto;
+  float: left;
+  margin-top: .5vw;
+  margin-right: 1vw;
+}
+
+.text_clear {
+  clear: right;
+}
+
+.title_text {
+  font-size: 2vw;
+  font-weight: bold;
+}

@@ -111,7 +111,7 @@ const AnnouncementsDisplay = (
   if (auth && auth.status && auth.status === constants.STATUS_AUTHENTICATED) {
     if ( size === constants.SIZE_LARGE) {
       return (
-        <section id="announcementsdisplaycontainer" className="d-flex flex-column justify-content-center p-0 colorsettings_bodybackground heightsettings_announcementsdisplaycontainer">
+        <section id="announcementsdisplaycontainer" className="d-flex flex-column justify-content-center p-0 colorsettings_bodybackground">
           <h1 className="colorsettings_bodybackground colorsettings_bodyheaders"><u>Announcements</u></h1>
           {
             announcementsData?.announcements
