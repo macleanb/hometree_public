@@ -73,7 +73,7 @@ describe("8e5-User Search Tests for Admin User", () => {
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
       .should('have.length', 2)
       .first()
-      .should('have.text', 'Turing, Alanalanturing@email.com');
+      .should('have.text', 'Babbage, Charleschuck@email.com');
 
     /* Clear users search field */
     cy.get("[placeholder='search name, address, email, etc.']").clear();

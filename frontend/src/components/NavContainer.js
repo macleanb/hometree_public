@@ -58,11 +58,14 @@ const NavContainer = () => {
     const getTemperatureData = async () => {
       const client = getClient();
 
-      /* Get data from API then set to currentTemp state */
-      const response = await client.get(getTemperatureURL());
-
-      if (response.status === 200 && active) {
-        setCurrentTemp(response.data.temp);
+      try {
+        /* Get data from API then set to currentTemp state */
+        const response = await client.get(getTemperatureURL());
+        if (response.status === 200 && active) {
+          setCurrentTemp(response.data.temp);
+        }
+      } catch (error) {
+        console.log(error);
       }
     }
 

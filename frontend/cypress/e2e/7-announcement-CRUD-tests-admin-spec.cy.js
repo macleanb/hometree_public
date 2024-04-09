@@ -8,7 +8,7 @@ describe("7-Announcement CRUD Tests for Admin User", () => {
     cy.get("div button").should("have.text", "Sign In").click();
 
     /* Ensure profile link has correct text */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Test   Admin");
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   von Neumann");
 
     /* Ensure temperature display exists */
     cy.get("#temp-display").contains("Current Temp");

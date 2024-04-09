@@ -1,0 +1,17 @@
+.font_size_street {
+  font-size: 1.15vw;
+}
+
+.font_size_street_2, .font_size_city_state_zip {
+  font-size: 1vw;
+}
+
+.container_image_size {
+  width: 6vw;
+  height: 6vw;
+}
+
+.image_size {
+  width: 100%;
+  height: auto;
+}

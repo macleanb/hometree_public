@@ -1,8 +1,4 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Inputs */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect, useContext, useRef } from 'react';
 import React from 'react';
@@ -11,12 +7,13 @@ import Form from 'react-bootstrap/Form';
 import { Search } from 'react-bootstrap-icons';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-/* Internal Libraries */
-import { getAllAddressesAsArray, getAllAddressesAsDict } from '../utils/addressUtils';
+/* Internal Inputs */
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
 import { filterResidences, getAllResidencesAsDict } from '../utils/residenceUtils';
+import { getAllAddressesAsArray, getAllAddressesAsDict } from '../utils/addressUtils';
 import { getAllUsersAsDict } from '../utils/userUtils';
+import styles from './ResidencesDisplay.module.css';
 
 
 ////////////////////////
@@ -309,17 +306,17 @@ const ResidencesDisplay = (
                 residenceArrayLoaded(residenceDisplayArray) ?
                   residenceDisplayArray.map((obj, index) => (
                       <ListGroup.Item className="p-0" key={ index } action onClick={ () => handleResidenceClicked(obj) } variant="light">
-                        <div key={ index } className="d-flex p-2 flex-wrap justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
-                          <div className="d-flex align-items-center">
-                            <img src={ obj.image } width="100" height="100" alt="address"/>
+                        <div key={ index } className="d-flex p-2 justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
+                          <div className={`${styles.container_image_size} d-flex align-items-center`}>
+                            <img className={styles.image_size} src={ obj.image } alt="address"/>
                           </div>
                           
                           <div className="d-flex flex-column justify-content-center ms-4">
-                            <h5 className="mt-2 mb-1 colorsettings_listtext"><b>{ obj.street }</b></h5>
+                            <h5 className={`${styles.font_size_street} mt-2 mb-1 colorsettings_listtext`}><b>{ obj.street }</b></h5>
                             {
-                              obj.street_2 ? <p className="mt-1 mb-1 colorsettings_listtext">{ obj.street_2 }</p> : ''
+                              obj.street_2 ? <p className={`${styles.font_size_street_2} mt-1 mb-1 colorsettings_listtext`}>{ obj.street_2 }</p> : ''
                             }
-                            <p className="mt-1 mb-2 colorsettings_listtext">{obj.city},{' '}{obj.addr_state}{' '}{obj.zipcode}</p>
+                            <p className={`${styles.font_size_city_state_zip} mt-1 mb-2 colorsettings_listtext`}>{obj.city},{' '}{obj.addr_state}{' '}{obj.zipcode}</p>
                           </div>
                         </div>
                       </ListGroup.Item>

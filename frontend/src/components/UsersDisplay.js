@@ -1,13 +1,17 @@
-import { useState, useEffect, useContext, useRef } from 'react';
-import React from 'react';
+/* External Imports */
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import ListGroup from 'react-bootstrap/ListGroup';
+import React from 'react';
+import { Search } from 'react-bootstrap-icons';
+import { useState, useEffect, useContext, useRef } from 'react';
+
+/* Internal Imports */
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
 import { filterUsers } from '../utils/userUtils';
-import ListGroup from 'react-bootstrap/ListGroup';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Form from 'react-bootstrap/Form';
-import { Search } from 'react-bootstrap-icons';
+import styles from './UsersDisplay.module.css';
 
 
 ////////////////////////
@@ -156,12 +160,12 @@ const UsersDisplay = (
                   userDisplayArray.map((obj, index) => (
                     <ListGroup.Item className="p-0" key={ index } action onClick={ () => handleUserClicked(obj) } variant="light">
                       <div key={ index } className="d-flex p-2 flex-wrap justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
-                        <div className="d-flex align-items-center">
-                          <img src={ obj.image } width="100" height="100" alt="portrait"/>
+                        <div className={`${styles.container_image_size} d-flex align-items-center`}>
+                          <img className={styles.image_size} src={ obj.image } alt="portrait"/>
                         </div>
                         <div className="d-flex flex-column justify-content-center ms-4">
-                          <h5 className="mt-2 mb-1 colorsettings_listtext"><b>{ obj.last_name }, { obj.first_name }</b></h5>
-                          <p className="mt-1 mb-2 colorsettings_listtext">{ obj.email }</p>
+                          <h5 className={`${styles.font_size_name} mt-2 mb-1 colorsettings_listtext`}><b>{ obj.last_name }, { obj.first_name }</b></h5>
+                          <p className={`${styles.font_size_email} mt-1 mb-2 colorsettings_listtext`}>{ obj.email }</p>
                         </div>
                       </div>
                     </ListGroup.Item>

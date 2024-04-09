@@ -65,13 +65,14 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
-      responsive shrinking - self-register page, basic users policies page
+      responsive shrinking - home page
+      update residences with boulevard and pictures (take better pic of 104) then re-download fixtures
+      get DNS website domain name (Adam's tutorial)
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
       use httponly cookies (see Adam's video and demo code)
              
     Backend:
-        sometimes getting weather results in 500 server error
       enable https
       enable domain name/dns
       enable httponly cookies

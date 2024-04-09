@@ -3,7 +3,7 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
     cy.visit("/");
 
     /* Wait for page to load */
-    cy.wait(1000)
+    cy.wait(1000);
 
     /* Enter basic user information and click Sign In button */
     cy.get("[placeholder='Enter email']").type('testadmin@email.com');
@@ -225,7 +225,7 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
       .click();
 
     /* Wait for page to update */
-    cy.wait(1000);
+    cy.wait(2000);
 
     /* Search for a residence by street number */
     cy.get("[placeholder='search name, address, email, etc.']").type('104').pause();

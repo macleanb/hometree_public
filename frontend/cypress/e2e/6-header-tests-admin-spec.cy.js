@@ -8,7 +8,7 @@ describe("2-Header Tests for Admin User", () => {
     cy.get("div button").should("have.text", "Sign In").click();
 
     /* Ensure profile link has correct text */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Test   Admin");
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   von Neumann");
 
     /* Ensure temperature display exists */
     cy.get("#temp-display").contains("Current Temp");
@@ -54,7 +54,7 @@ describe("2-Header Tests for Admin User", () => {
     cy.get('.addressformcontainer h1').contains('New Address Information').should('exist');
 
     /* Ensure profile link has correct text and click on it */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Test   Admin").click();
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   von Neumann").click();
 
     /* Wait a second to let all the API data arrive */
     cy.wait(1000);
@@ -66,7 +66,7 @@ describe("2-Header Tests for Admin User", () => {
     cy.wait(1000);
 
     /* Ensure profile link has correct text and click on it */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Test   Admin");
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   von Neumann");
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();
