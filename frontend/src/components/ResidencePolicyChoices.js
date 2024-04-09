@@ -6,9 +6,10 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 
 /* Internal Imports */
-import PolicyChoiceCard from './PolicyChoiceCard';
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
+import PolicyChoiceCard from './PolicyChoiceCard';
+import styles from './ResidencePolicyChoices.module.css';
 
 /* This component takes in residencePolicyChoice data and displays it in 
    sorted order.  It sends click events back to the parent component

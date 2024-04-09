@@ -305,9 +305,9 @@
 }
 
 .residencepolicychoicetile {
-  height: min-content;
+  /* height: min-content; */
   /* max-width: 95vw; */
-  overflow: auto;
+  /* overflow: auto; */
   padding: 10px;
   text-align: center;
 }

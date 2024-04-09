@@ -5,8 +5,8 @@ module.exports =  defineConfig({
     baseUrl: "http://localhost:3000",
     supportFile: false,
   },
-  viewportWidth: 1536, // macbook-16
-  viewportHeight: 960,
+  viewportWidth: 1280, // macbook-13
+  viewportHeight: 800,
   video: false,
 });
 

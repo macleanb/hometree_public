@@ -1,8 +1,8 @@
-/* External Libraries */
+/* External Imports */
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/* Internal Libraries */
+/* Internal Imports */
 import addPolicyChoice from '../utils/policy/addPolicyChoice';
 import AuthContext from '../contexts/AuthProvider';
 import BackEndErrorContext from '../contexts/BackEndErrorProvider';
@@ -23,6 +23,7 @@ import indexOfObj from '../utils/indexOfObj';
 import NavContainer from '../components/NavContainer';
 import PoliciesDisplay from '../components/PoliciesDisplay';
 import ResidencePolicyChoices from '../components/ResidencePolicyChoices';
+import styles from './PolicyDashboard.module.css';
 import SuccessContext from '../contexts/SuccessProvider';
 import SuccessDisplay from '../components/SuccessDisplay';
 import updatePolicyChoice from '../utils/policy/updatePolicyChoice';
@@ -484,7 +485,7 @@ const PolicyDashboard = () => {
         <NavContainer />
         <ErrorDisplay className="colorsettings_bodybackground"/>
         <SuccessDisplay />
-        <div className="d-flex flex-wrap justify-content-start policydashboardcontainer">
+        <div className={`d-flex flex-wrap justify-content-start policydashboardcontainer`}>
           <PoliciesDisplay
             policiesDataArr={ allPoliciesDataArr }
             handlePolicyClicked={ handlePolicyClicked }
@@ -492,7 +493,7 @@ const PolicyDashboard = () => {
             setBackEndErrors={ setBackEndErrors }
             setSuccessMessages={ setSuccessMessages }
           />
-          <div className="d-flex me-5 flex-column flex-fill residencepolicychoicescontainer">
+          <div className={`${styles.containersize} d-flex me-5 flex-column flex-fill residencepolicychoicescontainer`}>
             <ResidencePolicyChoices
               currentCommunityPolicy={ currentCommunityPolicy }
               handleMakePublicCheckboxChanged={ handleMakePublicCheckboxChanged }

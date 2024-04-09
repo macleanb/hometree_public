@@ -1,8 +1,8 @@
-/* External Libraries */
+/* External Imports */
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/* Internal Libraries */
+/* Internal Imports */
 import PoliciesDisplay from '../components/PoliciesDisplay';
 import AuthContext from '../contexts/AuthProvider';
 import BackEndErrorContext from '../contexts/BackEndErrorProvider';
@@ -41,7 +41,6 @@ const PolicyManager = () => {
   const [ formType, setFormType ] = useState(constants.FORM_TYPE_POLICY);
   const [ selectedPolicyData, setSelectedPolicyData ] = useState(null);
   const [ selectedOptionInOptionSelect, setSelectedOptionInOptionSelect ] = useState(null);
-
 
   /* Other Declarations */
   const navigate = useNavigate();
