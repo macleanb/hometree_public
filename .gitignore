@@ -16,6 +16,9 @@ secrets.py
 
 # testing
 /coverage
+/screenshots
+screenshots/
+screenshots/*
 
 # production
 /build

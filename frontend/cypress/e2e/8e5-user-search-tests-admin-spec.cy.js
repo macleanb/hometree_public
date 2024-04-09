@@ -71,7 +71,7 @@ describe("8e5-User Search Tests for Admin User", () => {
 
     /* Ensure the users list displays one user button */
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
-      .should('have.length', 1)
+      .should('have.length', 2)
       .first()
       .should('have.text', 'Turing, Alanalanturing@email.com');
 

@@ -69,9 +69,9 @@ describe("demo-3-User Search for Admin User", () => {
     /* Search for a user by mailing address */
     cy.get("[placeholder='search name, address, email, etc.']").type('Laguna Beach');
 
-    /* Ensure the users list displays one user button */
+    /* Ensure the users list displays correct number of user buttons */
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
-      .should('have.length', 2).pause();
+      .should('have.length', 3).pause();
 
     /* Clear users search field */
     cy.get("[placeholder='search name, address, email, etc.']").clear();

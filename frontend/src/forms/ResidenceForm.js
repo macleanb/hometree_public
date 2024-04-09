@@ -1,12 +1,8 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Imports */
 import { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 
-/* Internal Libraries */
+/* Internal Imports */
 import AddressInputs from '../components/AddressInputs';
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
@@ -15,7 +11,6 @@ import DateInput from '../components/DateInput';
 import ImageInput from '../components/ImageInput';
 import OwnerInput from '../components/OwnerInput';
 import { userIsAuthorized } from '../utils/authUtils';
-
 
 /* This form is for CRUD operations on Residence objects */
 const ResidenceForm = (
@@ -46,7 +41,6 @@ const ResidenceForm = (
 
   const { auth } = useContext(AuthContext);
 
-  
   ////////////
   /* Render */
   ////////////

@@ -30,15 +30,21 @@ const ImageInput = ({
       </Form.Group>
       {
         formData?.imageFileName 
-        ? 
-          <Button variant="primary" className="h-40 ms-1 mt-3" onClick={ handleClearImageClicked }>
-            Clear Selection
-          </Button>
+        ?
+          <div className={ styles.container_button_clear }>
+            <Button
+              className={ styles.button_clear_size }
+              onClick={ handleClearImageClicked }
+              variant="primary"
+            >
+              Clear Selection
+            </Button>
+          </div>
         :
         backendImageExists && updateDeleteMode
         ? 
           <Form.Check
-            className="ms-1 mt-3"
+            className="ms-1 my-auto"
             type="checkbox"
             name="deleteExistingImageCheckbox"
             label={<b className="colorsettings_listtext">Delete Existing Image</b>}

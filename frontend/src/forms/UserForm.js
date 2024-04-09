@@ -116,7 +116,7 @@ const UserForm = (
           userData?.backendImageExists && ( mode === constants.MODE_USER_UPDATE_DELETE || mode === constants.MODE_USER_PROFILE )
           ? 
             <Form.Check
-              className="ms-1 mt-3"
+              className="ms-1 my-auto"
               type="checkbox"
               name="deleteExistingImageCheckbox"
               label={<b className="colorsettings_listtext">Delete Existing Image</b>}

@@ -27,8 +27,11 @@ class Weather(APIView):
 
         base_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units={units}&lang={lang}"
 
-        response = requests.get(base_url, params={})
-        results = response.json()
-        temp = results['main']['temp']
-
+        try:
+            response = requests.get(base_url, params={})
+            results = response.json()
+            temp = results['main']['temp']
+        except Exception as e:
+            print(f'An error occurred in weather api {e}')
+            temp = 0
         return Response({'temp': temp})

@@ -1,3 +1,15 @@
+.button_clear_size {
+  height: 40px;
+  max-height: 40px;
+  margin-top: 15px;
+}
+
+.container_button_clear {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
 .containersize {
   max-width: 100vw;
 }
