@@ -66,7 +66,7 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 TODO:
     Frontend:
       responsive shrinking - nav bar, home page, policy page
-      update residences with boulevard and pictures (take better pic of 104) then re-download fixtures
+      update residence 124 with picture then re-download fixtures
       get DNS website domain name (Adam's tutorial)
       wrap backend API calls in useEffect (use 'active' variable)
       enable https

@@ -11,7 +11,7 @@ describe("7-Announcement CRUD Tests for Admin User", () => {
     cy.get("[href='/userprofilemanager']").should("have.text", "John   von Neumann");
 
     /* Ensure temperature display exists */
-    cy.get("#temp-display").contains("Current Temp");
+    cy.get("#temp-display").contains("Shiloh, IL:");
 
     /* Wait a second to let all the API data arrive */
     cy.wait(1000);

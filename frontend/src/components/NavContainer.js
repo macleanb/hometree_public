@@ -17,6 +17,7 @@ import SuccessContext from '../contexts/SuccessProvider';
 /* Internal Imports */
 import { getClient } from '../utils/apiUtils';
 import getTemperatureURL from '../utils/getTemperatureURL';
+import getURL_WeatherIcon from '../utils/getURL_WeatherIcon';
 
 
 const NavContainer = () => {
@@ -33,6 +34,7 @@ const NavContainer = () => {
 
   /* State Declarations */
   const [ currentTemp, setCurrentTemp ] = useState();
+  const [ weatherIconCode, setWeatherIconCode ] = useState();
 
   //////////////////////////
   ///   Helper Methods   ///
@@ -63,6 +65,7 @@ const NavContainer = () => {
         const response = await client.get(getTemperatureURL());
         if (response.status === 200 && active) {
           setCurrentTemp(response.data.temp);
+          setWeatherIconCode(response.data.icon);
         }
       } catch (error) {
         console.log(error);
@@ -110,7 +113,13 @@ const NavContainer = () => {
               }
             </Nav>
             <div className="fs-6" id="temp-display">
-              {`Shiloh, IL Current Temp: ${ currentTemp ? currentTemp.toFixed(0) : '' }\u00B0 F`}
+              {`Shiloh, IL: ${ currentTemp ? currentTemp.toFixed(0) : '' }\u00B0 F`}
+              {
+                weatherIconCode
+                ?
+                  <img src={getURL_WeatherIcon(weatherIconCode)} alt="weather icon"/>
+                : ''
+              }
             </div>
             <Nav>
               {

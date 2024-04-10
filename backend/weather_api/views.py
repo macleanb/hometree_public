@@ -31,7 +31,8 @@ class Weather(APIView):
             response = requests.get(base_url, params={})
             results = response.json()
             temp = results['main']['temp']
+            icon = results['weather'][0]['icon']
         except Exception as e:
             print(f'An error occurred in weather api {e}')
             temp = 0
-        return Response({'temp': temp})
+        return Response({'temp': temp, 'icon': icon})

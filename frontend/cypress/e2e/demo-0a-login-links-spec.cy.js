@@ -14,7 +14,7 @@ describe("demo-0a: Login behavior and expolore basic user links", () => {
     cy.get("[href='/userprofilemanager']").should("have.text", "Ada   Lovelace");
 
     /* Ensure temperature display exists */
-    cy.get("#temp-display").contains("Current Temp").pause();
+    cy.get("#temp-display").contains("Shiloh, IL:").pause();
 
     /* Wait a second to let all the API data arrive */
     cy.wait(1000);
