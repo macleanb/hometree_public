@@ -1,0 +1,29 @@
+.brand_size {
+  width: 150px;
+  max-width: 18vw;
+  height: auto;
+}
+
+.weather {
+  display: flex;
+  align-items: end;
+  margin-top: auto;
+  white-space: nowrap;
+  font-size: min(2.8vw, 16px);
+}
+
+.profile {
+  text-align: end;
+  white-space: nowrap;
+  color: #000000;
+}
+
+.toggleable_img {
+  display: inline;
+}
+
+@media (max-width: 556px) {
+  .toggleable_img {
+    display: none;
+  }
+}
