@@ -7,7 +7,7 @@ import styles from './AnnouncementCard.module.css';
 /* For displaying detailed information for a given record object. */
 const AnnouncementCard = ({ keyValue, obj }) => {
   return (
-      <Card className="border-0 heightsettings_announcementcard widthsettings_announcementsdisplaytilelarge">
+      <Card className="border-0 heightsettings_announcementcard">
         <Card.Header as="h5" className="text-right" style={{ color: 'white', backgroundColor: "#427b01"}}>{ obj?.created_datetime ? new Date(obj.created_datetime.split('T')[0]).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}) : '' }</Card.Header>
         <Card.Body className="d-flex justify-content-around p-3 colorsettings_borders heightsettings_announcementcard cardbody">
             <div>

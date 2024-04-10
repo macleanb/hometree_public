@@ -74,9 +74,9 @@
   max-width: 23vw;
 }
 
-.widthsettings_announcementssearchfieldlarge {
+/* .widthsettings_announcementssearchfieldlarge {
   max-width: 45vw;
-}
+} */
 
 .widthsettings_announcementcardimage {
   width: auto;
@@ -92,9 +92,9 @@
   width: 25vw;
 }
 
-.widthsettings_announcementsdisplaytilelarge {
+/* .widthsettings_announcementsdisplaytilelarge {
   width: 50vw;
-}
+} */
 
 .widthsettings_residencepolicychoicetile {
   /* width: 50vw; */

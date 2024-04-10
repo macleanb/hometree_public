@@ -11,6 +11,6 @@
 }
 
 .title_text {
-  font-size: 2vw;
+  font-size: max(2vw, 18px);
   font-weight: bold;
 }

@@ -14,6 +14,7 @@ import AnnouncementCard from './AnnouncementCard';
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
 import filterAnnouncements from '../utils/announcement/filterAnnouncements';
+import styles from './AnnouncementsDisplay.module.css';
 
 /* This component takes in announcement data and displays it in 
    sorted order.  It provides a search bar to filter the data
@@ -111,13 +112,13 @@ const AnnouncementsDisplay = (
   if (auth && auth.status && auth.status === constants.STATUS_AUTHENTICATED) {
     if ( size === constants.SIZE_LARGE) {
       return (
-        <section id="announcementsdisplaycontainer" className="d-flex flex-column justify-content-center p-0 colorsettings_bodybackground">
+        <section id="announcementsdisplaycontainer" className={`${styles.container_size} d-flex flex-column justify-content-center p-0 colorsettings_bodybackground`}>
           <h1 className="colorsettings_bodybackground colorsettings_bodyheaders"><u>Announcements</u></h1>
           {
             announcementsData?.announcements
             ?
-              <Form.Group className="d-flex justify-content-center">
-                <InputGroup className="ms-3 me-2 mb-2 mt-2 align-items-center justify-content-center widthsettings_announcementssearchfieldlarge colorsettings_bodybackground">
+              <Form.Group className={`${styles.container_size} d-flex justify-content-center`}>
+                <InputGroup className={`${styles.search_field_size} ms-3 me-2 mb-2 mt-2 align-items-center justify-content-center colorsettings_bodybackground`}>
                   <Search color="royalblue" className="me-2" size={20} />
                   <Form.Control
                     className="rounded-2"
@@ -131,7 +132,7 @@ const AnnouncementsDisplay = (
               </Form.Group>
             : ''
           }
-          <div className="d-flex m-0 p-2 flex-fill flex-wrap justify-content-evenly announcementsdisplaytile colorsettings_bodybackground widthsettings_announcementsdisplaytilelarge">
+          <div className={`${styles.inner_container_size} d-flex colorsettings_bodybackground`}>
             {
               announcementsDisplayArray
               ?

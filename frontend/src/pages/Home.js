@@ -20,6 +20,7 @@ import ErrorDisplay from '../components/ErrorDisplay';
 /* Uncomment to display responsive map (warning: provides API key to client browser!) */
 /* import MapDisplay from '../components/MapDisplay'; */
 import MapDisplayStatic from '../components/MapDisplayStatic';
+import MapOffCanvas from '../components/MapOffCanvas';
 import NavContainer from '../components/NavContainer';
 
 const Home = () => {
@@ -110,6 +111,7 @@ const Home = () => {
     return (
       <div>
           <NavContainer />
+          <MapOffCanvas parentState={{ residenceLatLongs: residenceLatLongs }}/>
           <ErrorDisplay className="colorsettings_bodybackground"/>
           <br/>
           <div className="d-flex justify-content-around">

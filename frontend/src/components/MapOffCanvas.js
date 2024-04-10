@@ -1,4 +1,6 @@
 /* External Imports */
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useContext, useEffect, useRef, useState } from 'react';
 import DOMPurify from 'dompurify';
 
@@ -7,9 +9,9 @@ import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
 import { getClient, getCSRFToken } from '../utils/apiUtils';
 import getURL_Map from '../utils/getURL_Map';
-import styles from './MapDisplayStatic.module.css';
+import styles from './MapOffCanvas.module.css';
 
-const MapDisplayStatic = ({parentState}) => {
+const MapOffCanvas = ({parentState}) => {
 
   ///////////////////////
   /*   Declarations    */
@@ -23,7 +25,15 @@ const MapDisplayStatic = ({parentState}) => {
 
   /* State Declarations */
   const [ backendHTML, setBackendHTML ] = useState();
+  const [ show, setShow ] = useState(false);
+  
 
+  //////////////////////////
+  /*   Helper Functions   */
+  //////////////////////////
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   /////////////////
   /* Use Effects */
@@ -83,35 +93,54 @@ const MapDisplayStatic = ({parentState}) => {
     }
   }, [parentState?.residenceLatLongs]);
 
+  ////////////////
+  /*   Render   */
+  ////////////////
 
-  ////////////
-  /* Render */
-  ////////////
+  return (
+    <>
+      <Button
+        className={styles.toggleable}
+        onClick={handleShow}
+        variant="light">
+          view map
+      </Button>
 
-  if (auth && auth.status && auth.status === constants.STATUS_AUTHENTICATED) {
-    return (
-      <div className={ styles.toggleable } id="map-display-static" style={{maxWidth: '40vw', height: 'auto'}}>
-      {
-        parentState.residenceLatLongs && parentState.residenceLatLongs.length > 0 && backendHTML
-        ?
-          <>
-            <h1 className="mb-4 colorsettings_bodybackground colorsettings_bodyheaders"><u>Community Map</u></h1>
-            <div
-              // dangerouslySetInnerHTML={{ __html: backendHTML }} // less safe
-              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(backendHTML) }}
-              style={{maxWidth: '100%', height: 'auto', border: '5px solid #427b01'}}
-            >
-            </div>
-          </>
-        : <h1 className="mt-4">Loading map...</h1>
-      }
-      </div>
-    );
-  } else {
-    return (
-      <div>Loading page...</div>
-    );
-  }
+      <Offcanvas 
+        className={`h-75`}
+        show={ show }
+        onHide={ handleClose }
+        placement="top"
+      >
+        <Offcanvas.Header closeButton>
+          {/* <Offcanvas.Title>Community Map</Offcanvas.Title> */}
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          {
+            auth && auth.status && auth.status === constants.STATUS_AUTHENTICATED
+            ?
+              <div className={styles.map_container_size} id="map-display-static">
+              {
+                parentState.residenceLatLongs && parentState.residenceLatLongs.length > 0 && backendHTML
+                ?
+                  <>
+                    <h1 className="mb-4 text-center colorsettings_bodybackground colorsettings_bodyheaders"><u>Community Map</u></h1>
+                    <div
+                      // dangerouslySetInnerHTML={{ __html: backendHTML }} // less safe
+                      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(backendHTML) }}
+                      style={{maxWidth: '100%', height: 'auto', border: '5px solid #427b01'}}
+                    >
+                    </div>
+                  </>
+                : <h1 className="mt-4">Loading map...</h1>
+              }
+              </div>
+            : <div>Loading page...</div>
+          }
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
+  );
 };
 
-export default MapDisplayStatic;
+export default MapOffCanvas;
