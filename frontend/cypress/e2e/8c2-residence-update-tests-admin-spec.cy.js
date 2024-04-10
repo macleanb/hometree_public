@@ -17,7 +17,7 @@ describe("8c-Residence CRUD Tests", () => {
 
     /* Ensure the residences list displays correct number of residence buttons */
     cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
-      .should('have.length', 15);
+      .should('have.length', 12);
 
     /* Ensure the correct banner is displayed */
     cy.get('.residenceformcontainer h1')
@@ -47,7 +47,7 @@ describe("8c-Residence CRUD Tests", () => {
     cy.wait(1000)
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 15);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 12);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

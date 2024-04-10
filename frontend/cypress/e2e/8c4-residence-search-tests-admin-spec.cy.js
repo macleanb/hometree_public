@@ -32,7 +32,7 @@ describe("8c4-Residence Search Tests for Admin User", () => {
     cy.get('#residencesdisplaycontainer .residencesdisplaytile')
       .should('exist');
     cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
-      .should('have.length', 14);
+      .should('have.length', 11);
 
     /* Search for a residence by owner name */
     cy.get("[placeholder='search name, address, email, etc.']").type('alan');
@@ -48,7 +48,7 @@ describe("8c4-Residence Search Tests for Admin User", () => {
 
     /* Ensure the residence list displays correct number of buttons */
     cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
-      .should('have.length', 14);
+      .should('have.length', 11);
 
     /* Search for a residence by residence address */
     cy.get("[placeholder='search name, address, email, etc.']").type('120');
@@ -64,7 +64,7 @@ describe("8c4-Residence Search Tests for Admin User", () => {
 
     /* Ensure the residence list displays correct number of buttons */
     cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
-      .should('have.length', 14);
+      .should('have.length', 11);
 
     /* Search for a residence by user email */
     cy.get("[placeholder='search name, address, email, etc.']").type('alanturing@email.com');
@@ -80,7 +80,7 @@ describe("8c4-Residence Search Tests for Admin User", () => {
 
     /* Ensure the residence list displays correct number of buttons */
     cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
-      .should('have.length', 14);
+      .should('have.length', 11);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

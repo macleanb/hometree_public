@@ -43,7 +43,7 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
 
     /* Ensure the residences list displays correct number of residence buttons */
     cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
-      .should('have.length', 14);
+      .should('have.length', 11);
 
     /* Attempt to create a new residence with missing street field*/
     cy.get('.residenceformcontainer')

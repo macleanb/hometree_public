@@ -26,7 +26,7 @@ describe("8c-Residence CRUD Tests", () => {
       .should('have.text', 'New Residence Information');
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 14);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 11);
 
     /* Create a residence with valid inputs */
     cy.get("[placeholder='Enter Street']").type("100 Eden Park Boulevard");
@@ -46,7 +46,7 @@ describe("8c-Residence CRUD Tests", () => {
     cy.wait(1000)
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 15);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 12);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

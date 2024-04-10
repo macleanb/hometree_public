@@ -47,7 +47,7 @@ describe("8b-Residence Manager invalid field inputs", () => {
     cy.wait(1000);
 
     /* Ensure the residences list displays the correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 14);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 11);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();
@@ -106,7 +106,7 @@ describe("8b-Residence Manager invalid field inputs", () => {
     cy.wait(1000);
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 14);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 11);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();
@@ -162,7 +162,7 @@ describe("8b-Residence Manager invalid field inputs", () => {
     cy.wait(1000);
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 14);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 11);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();
@@ -217,7 +217,7 @@ describe("8b-Residence Manager invalid field inputs", () => {
     cy.wait(1000);
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 14);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 11);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

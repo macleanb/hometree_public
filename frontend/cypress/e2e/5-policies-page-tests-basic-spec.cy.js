@@ -45,10 +45,10 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get("[placeholder='search policies...']").clear();
     cy.get('.policiesdisplaytile').get('.policy-list-card').contains('The HOA President is:').click();
     cy.get('.residencepolicychoicescontainer').find('h2').should('have.text', 'Who should be the HOA President?');
-    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: Rick (60% of votes)');
+    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: Rick (50% of votes)');
 
     /* Ensure the correct number of residence policy choices displayed */
-    cy.get('.residencepolicychoicescontainer').get('.policychoicecard').should('have.length', 5);
+    cy.get('.residencepolicychoicescontainer').get('.policychoicecard').should('have.length', 4);
 
     /* Ensure a change in policy choice updates the current policy */
     cy.get('.policychoicecard').contains('108 Eden Park Blvd.:').get('select').select('Pikachu');
@@ -59,7 +59,7 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get("div button").filter(':contains("Acknowledge")').should("have.length", 1).first().click();
 
     /* Ensure the updated policy is displayed */
-        cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: Rick (60% of votes)');
+    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: N/A - votes are tied or non-existent (50% of votes)');
 
     cy.get('.policychoicecard').contains('108 Eden Park Blvd.:').get('select').select('Morty');
     cy.get('.policychoicecard').contains('108 Eden Park Blvd.:').get('button').contains('Update Policy Choice').click();
@@ -69,7 +69,7 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get("div button").filter(':contains("Acknowledge")').should("have.length", 1).first().click();
 
     /* Ensure the updated policy is displayed */
-    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: Rick (60% of votes)');
+    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: Rick (50% of votes)');
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

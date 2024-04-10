@@ -37,7 +37,7 @@ describe("8a-Residence Manager basic functionality and blank fields", () => {
     cy.get("[placeholder='search name, address, email, etc.']").should('exist')
 
     /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 14);
+    cy.get('#residencesdisplaycontainer .residencesdisplaytile button').should('have.length', 11);
 
     /* Attempt to create a new residence with missing street field*/
     cy.get('.residenceformcontainer').contains('New Residence Information').get('button').contains('Add Residence').click();
