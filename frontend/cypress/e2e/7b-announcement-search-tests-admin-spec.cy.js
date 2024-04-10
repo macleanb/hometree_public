@@ -41,7 +41,7 @@ describe("7b-Announcement Search Tests for Admin User", () => {
     cy.get('#announcementsdisplaycontainer .announcementsdisplaytile button')
       .should('have.length', 1)
       .first()
-      .should('have.text', 'Parking violationsJan 10, 2024');
+      .should('have.text', 'Parking violationsApr 16, 2024');
 
     /* Clear announcement search field */
     cy.get("[placeholder='search announcements...']").clear();
@@ -51,13 +51,13 @@ describe("7b-Announcement Search Tests for Admin User", () => {
       .should('have.length', 3);
 
     /* Search for an announcement */
-    cy.get("[placeholder='search announcements...']").type('Jan 8, 2024');
+    cy.get("[placeholder='search announcements...']").type('Apr 14, 2024');
 
     /* Ensure the announcement list displays one announcement button */
     cy.get('#announcementsdisplaycontainer .announcementsdisplaytile button')
       .should('have.length', 1)
       .first()
-      .should('have.text', 'Annual Beerfest!Jan 8, 2024');
+      .should('have.text', 'Annual Beerfest!Apr 14, 2024');
 
     /* Clear announcement search field */
     cy.get("[placeholder='search announcements...']").clear();

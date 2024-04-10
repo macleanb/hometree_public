@@ -51,8 +51,8 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get('.residencepolicychoicescontainer').get('.policychoicecard').should('have.length', 4);
 
     /* Ensure a change in policy choice updates the current policy */
-    cy.get('.policychoicecard').contains('108 Eden Park Blvd.:').get('select').select('Pikachu');
-    cy.get('.policychoicecard').contains('108 Eden Park Blvd.:').get('button').contains('Update Policy Choice').click();
+    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('select').select('Pikachu');
+    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('button').contains('Update Policy Choice').click();
 
     /* Ensure a modal is displayed with appropriate success message */
     cy.get(".modal-body").should("have.text", "Policy choice updated.");
@@ -61,8 +61,8 @@ describe("5-Policies Page Tests for Basic User", () => {
     /* Ensure the updated policy is displayed */
     cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: N/A - votes are tied or non-existent (50% of votes)');
 
-    cy.get('.policychoicecard').contains('108 Eden Park Blvd.:').get('select').select('Morty');
-    cy.get('.policychoicecard').contains('108 Eden Park Blvd.:').get('button').contains('Update Policy Choice').click();
+    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('select').select('Morty');
+    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('button').contains('Update Policy Choice').click();
 
     /* Ensure a modal is displayed with appropriate success message */
     cy.get(".modal-body").should("have.text", "Policy choice updated.");
