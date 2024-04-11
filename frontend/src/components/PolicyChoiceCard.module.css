@@ -1,0 +1,33 @@
+.inner_container {
+  justify-content: space-between;
+}
+
+.outer_container_size {
+  width: 100% !important;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+
+.other_residence_size {
+  width: 75% !important;
+}
+
+.other_residence_font_size {
+  text-align: left;
+  display: inline;
+  font-size: min(4vw, 16px) !important;
+}
+
+.select_size {
+  width: min-content;
+  margin: 0px 10px 0px 10px;
+  font-size: min(4vw, 16px);
+  color: black;
+  border: 1px solid lightgray !important;
+}
+
+@media (max-width: 556px) {
+  .inner_container {
+    justify-content: center;
+  }
+}

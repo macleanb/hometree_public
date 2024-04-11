@@ -12,6 +12,7 @@ import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
 import filterPolicies from '../utils/policy/filterPolicies';
 import PolicyListCard from './PolicyListCard';
+import styles from './PoliciesDisplay.module.css';
 
 /* This component takes in announcement data and displays it in 
    sorted order.  It provides a search bar to filter the data
@@ -109,10 +110,12 @@ const PoliciesDisplay = (
 
   if (auth && auth.status && auth.status === constants.STATUS_AUTHENTICATED) {
     return (
-      <section id="policiesdisplaycontainer" className="d-flex flex-column justify-content-center p-0 colorsettings_bodybackground heightsettings_policiesdisplaycontainer">
+      <section id="policiesdisplaycontainer" className={`${styles.outer_container_size} ${styles.outer_container_border} d-flex flex-column justify-content-start p-0 colorsettings_bodybackground heightsettings_policiesdisplaycontainer`}>
+        <h1 className="colorsettings_bodybackground colorsettings_bodyheaders"><u>Policies</u></h1>
         <Form.Group>
-          <InputGroup className="ms-3 me-2 mb-2 mt-2 align-items-center justify-content-center widthsettings_policiessearchfield colorsettings_bodybackground">
-            <Search color="royalblue" className="me-2" size={20} />
+          {/* <InputGroup className="ms-3 me-2 mb-2 mt-2 align-items-center justify-content-center widthsettings_policiessearchfield colorsettings_bodybackground"> */}
+          <InputGroup className={`${ styles.search_container_size } align-items-center colorsettings_bodybackground`}>
+            <Search color="royalblue" className={`${ styles.search_icon_size } me-2"`} />
             <Form.Control
               className="rounded-2"
               placeholder="search policies..."
@@ -123,10 +126,9 @@ const PoliciesDisplay = (
             />
           </InputGroup> 
         </Form.Group>
-        <h1 className="colorsettings_bodybackground colorsettings_bodyheaders"><u>Policies</u></h1>
-        <div className="d-flex m-0 p-2 flex-fill flex-wrap justify-content-evenly policiesdisplaytile colorsettings_bodybackground widthsettings_policiesdisplaytile">
-          <div>
-            <ListGroup variant="flush" className="align-items-center justify-content-center">
+        {/* <div className="d-flex m-0 p-2 flex-fill flex-wrap justify-content-evenly policiesdisplaytile colorsettings_bodybackground widthsettings_policiesdisplaytile"> */}
+        <div className={`${ styles.list_container_size } d-flex m-0 p-2 justify-content-evenly policiesdisplaytile colorsettings_bodybackground`}>
+            <ListGroup variant="flush" className={`${styles.list_group_size} align-items-center justify-content-center`}>
               {
                 policiesDisplayArray?.length > 0
                 ?
@@ -141,7 +143,6 @@ const PoliciesDisplay = (
                   )) : ''
               }
             </ListGroup>
-          </div>
         </div>
       </section>
     );

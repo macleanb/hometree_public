@@ -1,3 +1,13 @@
-.containersize {
-  max-width: 70vw;
+.choices_container_size {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px 0px 10px;
+  width: 75vw;
+  max-width: 75vw;
+}
+
+@media (max-width: 556px) {
+  .choices_container_size {
+    display: none;
+  }
 }

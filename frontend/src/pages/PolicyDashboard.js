@@ -1,6 +1,7 @@
 /* External Imports */
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
 /* Internal Imports */
 import addPolicyChoice from '../utils/policy/addPolicyChoice';
@@ -23,6 +24,7 @@ import indexOfObj from '../utils/indexOfObj';
 import NavContainer from '../components/NavContainer';
 import PoliciesDisplay from '../components/PoliciesDisplay';
 import ResidencePolicyChoices from '../components/ResidencePolicyChoices';
+import ResidencePolicyChoicesOffCanvas from '../components/ResidencePolicyChoicesOffCanvas';
 import styles from './PolicyDashboard.module.css';
 import SuccessContext from '../contexts/SuccessProvider';
 import SuccessDisplay from '../components/SuccessDisplay';
@@ -49,15 +51,17 @@ const PolicyDashboard = () => {
   const [ allResidencesDataDict, setAllResidencesDataDict ] = useState();
   const [ currentCommunityPolicy, setCurrentCommunityPolicy ] = useState();
   const [ options, setOptions ] = useState();
+  const [ policyChoicePublicVisibilities, setPolicyChoicePublicVisibilities ] = useState({});
   const [ residencesForUserArr, setResidencesForUserArr ] = useState();
   const [ residencesForUserDict, setResidencesForUserDict ] = useState();
   const [ residencePolicyChoicesDataArr, setResidencePolicyChoicesDataArr ] = useState();
   const [ selectedPolicyData, setSelectedPolicyData ] = useState();
   const [ selectedPolicyOptions, setSelectedPolicyOptions ] = useState({});
-  const [ policyChoicePublicVisibilities, setPolicyChoicePublicVisibilities ] = useState({});
+  const [ showOffCanvas, setShowOffCanvas ] = useState(false);
 
   /* Other Declarations */
   const navigate = useNavigate();
+  const isMobile = useMediaQuery({ query: `(max-width: 556px)` });
 
   ////////////////////////
   /// Helper Functions ///
@@ -344,6 +348,11 @@ const PolicyDashboard = () => {
       loadSinglePolicyFromBackend(policyDict.id);
       setSelectedPolicyOptions({});
       setPolicyChoicePublicVisibilities({});
+
+      /* See if the window size is small.  If so, show off canvas */
+      if (isMobile) {
+        setShowOffCanvas(true);
+      }
     }
   }
 
@@ -485,7 +494,23 @@ const PolicyDashboard = () => {
         <NavContainer />
         <ErrorDisplay className="colorsettings_bodybackground"/>
         <SuccessDisplay />
-        <div className={`d-flex flex-wrap justify-content-start policydashboardcontainer`}>
+        <ResidencePolicyChoicesOffCanvas
+              currentCommunityPolicy={ currentCommunityPolicy }
+              handleMakePublicCheckboxChanged={ handleMakePublicCheckboxChanged }
+              handleUpdatePolicyChoiceClicked={ handleUpdatePolicyChoiceClicked }
+              policyChoicePublicVisibilities={ policyChoicePublicVisibilities }
+              residencePolicyChoicesDataArr={ residencePolicyChoicesDataArr }
+              selectedPolicyData={ selectedPolicyData }
+              selectedPolicyOptions={ selectedPolicyOptions }
+              setPolicyChoicePublicVisibilities={ setPolicyChoicePublicVisibilities }
+              setSelectedPolicyOptions={ setSelectedPolicyOptions }
+              setFrontEndErrors={ setFrontEndErrors }
+              setBackEndErrors={ setBackEndErrors }
+              setSuccessMessages={ setSuccessMessages }
+              showOffCanvas={ showOffCanvas }
+              setShowOffCanvas={ setShowOffCanvas }
+            />
+        <div className={`d-flex justify-content-start policydashboardcontainer`}>
           <PoliciesDisplay
             policiesDataArr={ allPoliciesDataArr }
             handlePolicyClicked={ handlePolicyClicked }
@@ -493,7 +518,8 @@ const PolicyDashboard = () => {
             setBackEndErrors={ setBackEndErrors }
             setSuccessMessages={ setSuccessMessages }
           />
-          <div className={`${styles.containersize} d-flex me-5 flex-column flex-fill residencepolicychoicescontainer`}>
+          {/* <div className={`${styles.dashboard_container_size} d-flex me-5 flex-column flex-fill residencepolicychoicescontainer`}> */}
+          <div className={`${ styles.choices_container_size }`}>
             <ResidencePolicyChoices
               currentCommunityPolicy={ currentCommunityPolicy }
               handleMakePublicCheckboxChanged={ handleMakePublicCheckboxChanged }

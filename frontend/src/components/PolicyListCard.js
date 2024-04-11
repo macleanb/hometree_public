@@ -1,6 +1,9 @@
 /* External Imports */
 import ListGroup from 'react-bootstrap/ListGroup';
 
+/* Internal Imports */
+import styles from './PolicyListCard.module.css';
+
 const PolicyListCard = ({
   handleObjClicked,
   headlineFieldName,
@@ -14,8 +17,8 @@ const PolicyListCard = ({
   
 {
   return (
-    <ListGroup.Item className="p-0 policy-list-card" action onClick={ () => handleObjClicked(obj) } variant="light">
-      <div className="d-flex p-2 flex-wrap justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
+    <ListGroup.Item className={`${styles.outer_container_size} p-0 policy-list-card`} action onClick={ () => handleObjClicked(obj) } variant="light">
+      <div className="d-flex p-0 pb-2 flex-wrap justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
         {
           obj.image
           ?
@@ -26,13 +29,12 @@ const PolicyListCard = ({
         }
 
         
-        <div className="d-flex flex-grow-1 flex-column justify-content-center ms-4">
-          <h5 align="right" className="mt-2 mb-1 colorsettings_listtext"><b>{ obj[ headlineFieldName ] }</b></h5>
+        <div className="d-flex w-100 flex-column justify-content-center ms-1">
+          <h5 align="left" className={`${styles.font_size} mt-2 mb-1 colorsettings_listtext`}><b>{ obj[ headlineFieldName ] }</b></h5>
           {
             obj.effective_date
             ?
-              // <p align="right" className="mt-1 mb-1 colorsettings_listtext">{ obj.effective_date }</p>
-              <p align="right" className="mt-1 mb-1 colorsettings_listtext">{ new Date(obj.effective_date).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}) }</p>
+              <p align="left" className="mt-1 mb-1">{ new Date(obj.effective_date).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}) }</p>
             : ''
           }
         </div>

@@ -96,10 +96,10 @@
   width: 50vw;
 } */
 
-.widthsettings_residencepolicychoicetile {
+/* .widthsettings_residencepolicychoicetile {
   /* width: 50vw; */
-  min-width: max-content !important;
-}
+  /* min-width: max-content !important; */
+/* } */
 
 .colorsettings_navbackground {
   /* background-color: #476930 !important; */
@@ -253,9 +253,9 @@
   border-right: 1px solid gray;
 }
 
-#policiesdisplaycontainer {
+/* #policiesdisplaycontainer {
   border-right: 1px solid gray;
-}
+} */
 
 #residencesdisplaycontainer {
   border-right: 1px solid gray;
@@ -265,10 +265,10 @@
   padding-left: 80px !important;
 }
 
-.residencepolicychoicescontainer {
+/* .residencepolicychoicescontainer {
   padding-left: 80px !important;
   margin-top: 55px !important;
-}
+} */
 
 .usersdisplaytile {
   height: fit-content;
@@ -296,21 +296,18 @@
   text-align: center;
 }
 
-.policiesdisplaytile {
+/* .policiesdisplaytile {
   height: min-content;
   max-width: 95vw;
   overflow: auto;
   padding: 10px;
   text-align: center;
-}
+} */
 
-.residencepolicychoicetile {
-  /* height: min-content; */
-  /* max-width: 95vw; */
-  /* overflow: auto; */
+/* .residencepolicychoicetile {
   padding: 10px;
   text-align: center;
-}
+} */
 
 #adminregistercontainer, .addressform, .userform, .residenceform, .announcementform, .policyform {
   padding: 0px !important;
@@ -352,11 +349,11 @@
   height: 2.5rem !important;
   width: 380px !important;
 }
-.optioninputselect {
+/* .optioninputselect {
   height: 2.5rem !important;
   width: 380px !important;
   border: 1px solid lightgray !important;
-}
+} */
 
 .updatepolicychoicebutton {
   height: 2.5rem !important;

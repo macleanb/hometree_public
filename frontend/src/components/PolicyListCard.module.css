@@ -1,0 +1,13 @@
+.outer_container_size {
+  max-width: 100%;
+}
+
+.font_size {
+  font-size: min(2.5vw, 20px);
+}
+
+@media (max-width: 556px) {
+  .font_size {
+    font-size: min(4vw, 20px);
+  }
+}
