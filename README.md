@@ -65,7 +65,7 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
-      responsive shrinking - policy page
+      responsive shrinking - policy page, user profile page (incl. adding mailing address)
       update residence 124 with picture then re-download fixtures
       get DNS website domain name (Adam's tutorial)
       wrap backend API calls in useEffect (use 'active' variable)
