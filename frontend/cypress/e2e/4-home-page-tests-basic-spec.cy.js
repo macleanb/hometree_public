@@ -29,14 +29,14 @@ describe("4-Home Page Tests for Basic User", () => {
     cy.get("[placeholder='search announcements...']").should('exist')
 
     /* Ensure the announcement display tile is visible */
-    cy.get('#announcementsdisplaycontainer').find('.announcementsdisplaytile').should('exist');
+    cy.get('#announcementsdisplaycontainer').find('.col').should('exist');
 
     /* Ensure the announcement displays three announcements */
-    cy.get('.announcementsdisplaytile').get('.cardbody').should('have.length', 3);
+    cy.get('.col').get('.cardbody').should('have.length', 3);
 
     /* Ensure search field works */
     cy.get("[placeholder='search announcements...']").type('parking');
-    cy.get('.announcementsdisplaytile').get('.cardbody').should('have.length', 1);
+    cy.get('.col').get('.cardbody').should('have.length', 1);
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

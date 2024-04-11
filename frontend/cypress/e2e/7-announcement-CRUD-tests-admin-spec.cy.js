@@ -32,16 +32,16 @@ describe("7-Announcement CRUD Tests for Admin User", () => {
 
     /* Ensure the announcement display tile is visible */
     cy.get('#announcementsdisplaycontainer')
-      .find('.announcementsdisplaytile').should('exist');
+      .find('.col').should('exist');
 
     /* Ensure the announcement displays three announcements */
-    cy.get('.announcementsdisplaytile')
+    cy.get('.col')
       .get('.cardbody')
       .should('have.length', 3);
 
     /* Ensure search field works */
     cy.get("[placeholder='search announcements...']").type('parking');
-    cy.get('.announcementsdisplaytile').get('.cardbody').should('have.length', 1);
+    cy.get('.col').get('.cardbody').should('have.length', 1);
 
     /* Click on the Admin dropdown -> Announcements */
     cy.get('.navbar-nav > .dropdown').should('exist').click();

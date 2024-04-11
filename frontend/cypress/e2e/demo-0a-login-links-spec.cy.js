@@ -29,11 +29,11 @@ describe("demo-0a: Login behavior and expolore basic user links", () => {
     cy.get('#announcementsdisplaycontainer').find('h1').should('have.text', 'Announcements');
 
     /* Ensure the announcement display tile is visible */
-    cy.get('#announcementsdisplaycontainer').find('.announcementsdisplaytile').should('exist');
+    cy.get('#announcementsdisplaycontainer').find('.col').should('exist');
 
     /* Ensure search field works */
     cy.get("[placeholder='search announcements...']").type('beer');
-    cy.get('.announcementsdisplaytile').get('.cardbody').should('have.length', 1).pause();
+    cy.get('.col').get('.cardbody').should('have.length', 1).pause();
 
     /* Click on the Policies link */
     cy.get("[href='/policydashboard']").should("have.text", "Policies").click();
