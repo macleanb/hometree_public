@@ -31,6 +31,7 @@ const AddressInputs = ( { addrData, onChange, bootstrapSettings } ) => {
             value={ addrData.street ? addrData.street : ''}
             required
             name="street"
+            autoFocus
           />
           {
             frontEndErrors?.street && (
