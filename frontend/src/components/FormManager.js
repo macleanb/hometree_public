@@ -1256,7 +1256,7 @@ const FormManager = ({
       return (
         <Form className="d-flex mt-5 p-2 mb-5 flex-column colorsettings_bodybackground">
           <h1 className="mb-4 text-wrap colorsettings_bodyheaders">
-            Do you want to add a mailing address for the new user?
+            Do you want to add a mailing address?
           </h1>
           <div className="d-flex mb-4 flex-wrap justify-content-center align-items-center">
             <div className="d-flex flex-wrap justify-content-center">
