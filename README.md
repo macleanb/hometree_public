@@ -71,6 +71,7 @@ TODO:
       use httponly cookies (see Adam's video and demo code)
              
     Backend:
+      add 'http://ht-demo.duckdns.org/api/v1' to django settings trusted origins etc.
       enable https
       enable domain name/dns
       enable httponly cookies

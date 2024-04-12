@@ -49,8 +49,10 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1',
     'https://127.0.0.1',
     'http://localhost:3000',
-    'http://ec2-3-134-95-76.us-east-2.compute.amazonaws.com',
-    'https://ec2-3-134-95-76.us-east-2.compute.amazonaws.com' 
+    # 'http://ec2-3-134-95-76.us-east-2.compute.amazonaws.com',
+    # 'https://ec2-3-134-95-76.us-east-2.compute.amazonaws.com'
+    'http://3.142.226.144', # AWS elastic IP
+    'http://ht-demo.duckdns.org'
     ]
 
 CORS_ALLOW_CREDENTIALS = True
