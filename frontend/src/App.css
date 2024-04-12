@@ -364,8 +364,8 @@
 .makepubliccheckbox {
   align-items: center !important;
   height: 2.5rem !important;
-  width: 270px !important;
-  min-width: max-content !important;
+  /* width: 270px !important;
+  min-width: max-content !important; */
 }
 
 

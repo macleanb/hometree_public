@@ -65,7 +65,8 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
-      responsive shrinking - policy page, user profile page (incl. adding mailing address)
+      responsive shrinking - policy page wraps with 'no option selected' (Ada) - 'make address public' checkbox is way too wide, user profile page (incl. adding mailing address)
+      demo - admin residence add -- remove blank errors...just skip to entering all invalid address fields
       update residence 124 with picture then re-download fixtures
       get DNS website domain name (Adam's tutorial)
       wrap backend API calls in useEffect (use 'active' variable)
