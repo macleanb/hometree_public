@@ -13,13 +13,13 @@ describe("5-Policies Page Tests for Basic User", () => {
     /* Ensure temperature display exists */
     cy.get("#temp-display").contains("Shiloh, IL:");
 
-    /* Wait a second to let all the API data arrive */
+    /* Wait for page load */
     cy.wait(1000);
 
     /* Click on the Policies link */
     cy.get("[href='/policydashboard']").should("have.text", "Policies").click();
 
-    /* Wait a second to let all the API data arrive */
+    /* Wait for page load */
     cy.wait(1000);
 
     /* Ensure the policies display list banner is visible */
@@ -44,35 +44,61 @@ describe("5-Policies Page Tests for Basic User", () => {
     /* Ensure selecting a policy changes the displayed policy */
     cy.get("[placeholder='search policies...']").clear();
     cy.get('.policiesdisplaytile').get('.policy-list-card').contains('The HOA President is:').click();
-    cy.get('.residencepolicychoicescontainer').find('h2').should('have.text', 'Who should be the HOA President?');
-    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: Rick (50% of votes)');
+
+    /* Wait for page load */
+    cy.wait(1000);
+
+    cy.get('.residencepolicychoicescontainer').find('h2')
+      .should('have.text', 'Who should be the HOA President?');
+    cy.get('.residencepolicychoicescontainer').find('h3')
+      .should('have.text', 'Current community policy: Rick (50% of votes)');
 
     /* Ensure the correct number of residence policy choices displayed */
     cy.get('.residencepolicychoicescontainer').get('.policychoicecard').should('have.length', 4);
 
     /* Ensure a change in policy choice updates the current policy */
     cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('select').select('Pikachu');
-    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('button').contains('Update Policy Choice').click();
+    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:')
+      .get('button').contains('Update Policy Choice').click();
+
+    /* Wait for page load */
+    cy.wait(1000);
 
     /* Ensure a modal is displayed with appropriate success message */
     cy.get(".modal-body").should("have.text", "Policy choice updated.");
     cy.get("div button").filter(':contains("Acknowledge")').should("have.length", 1).first().click();
 
+    /* Wait for page load */
+    cy.wait(1000);
+
     /* Ensure the updated policy is displayed */
-    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: N/A - votes are tied or non-existent (50% of votes)');
+    cy.get('.residencepolicychoicescontainer').find('h3')
+      .should('have.text', 'Current community policy: N/A - votes are tied or non-existent (50% of votes)');
 
     cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('select').select('Morty');
-    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('button').contains('Update Policy Choice').click();
+    cy.get('.policychoicecard').contains('108 Eden Park Boulevard:')
+      .get('button').contains('Update Policy Choice').click();
+
+    /* Wait for page load */
+    cy.wait(1000);
 
     /* Ensure a modal is displayed with appropriate success message */
     cy.get(".modal-body").should("have.text", "Policy choice updated.");
     cy.get("div button").filter(':contains("Acknowledge")').should("have.length", 1).first().click();
 
+    /* Wait for page load */
+    cy.wait(1000);
+
     /* Ensure the updated policy is displayed */
-    cy.get('.residencepolicychoicescontainer').find('h3').should('have.text', 'Current community policy: Rick (50% of votes)');
+    cy.get('.residencepolicychoicescontainer').find('h3')
+      .should('have.text', 'Current community policy: Rick (50% of votes)');
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();
+
+    /* Wait for page load */
+    cy.wait(1000);
+    
     cy.get("div h1").should("have.text", "Sign In");
   });
 });

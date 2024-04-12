@@ -250,7 +250,7 @@ describe("3-User Profile Mailing Address Tests", () => {
     cy.visit("/");
 
     /* Wait for page to load */
-    cy.wait(1000)
+    cy.wait(1000);
 
     /* Enter basic user information and click Sign In button */
     cy.get("[placeholder='Enter email']").type('testadmin@email.com');
@@ -258,13 +258,13 @@ describe("3-User Profile Mailing Address Tests", () => {
     cy.get("div button").should("have.text", "Sign In").click();
 
     /* Wait for page to load */
-    cy.wait(1000)
+    cy.wait(1000);
 
     /* Click on the Admin dropdown -> User Accounts */
     cy.get('.navbar-nav > .dropdown').should('exist').click();
 
     /* Wait for page to load */
-    cy.wait(1000)
+    cy.wait(1000);
 
     cy.get('.navbar-nav > .dropdown')
       .should('exist')
@@ -273,7 +273,7 @@ describe("3-User Profile Mailing Address Tests", () => {
       .click();
 
     /* Wait for page to load */
-    cy.wait(1000)
+    cy.wait(1000);
 
     /* Ensure the users list displays correct number of user buttons */
     cy.get('#usersdisplaycontainer .usersdisplaytile button')
@@ -296,8 +296,7 @@ describe("3-User Profile Mailing Address Tests", () => {
     cy.get('.userformcontainer h1')
       .should('have.text', 'Update or Delete User');
 
-    cy.get('.userformcontainer')
-      .get('button')
+    cy.get('button')
       .contains('Delete User')
       .click();
 
@@ -401,7 +400,7 @@ describe("3-User Profile Mailing Address Tests", () => {
     cy.wait(1000);
 
     /* Ensure the correct banner is displayed */
-    cy.get('.userformcontainer h1')
+    cy.get('h1')
       .should('have.text', 'Update User Profile');
 
     /* Click away from the user profile page (Home) */
@@ -423,7 +422,7 @@ describe("3-User Profile Mailing Address Tests", () => {
     cy.wait(1000);
 
     /* Ensure the correct banner is displayed */
-    cy.get('.userformcontainer h1')
+    cy.get('h1')
       .should('have.text', 'Update User Profile');
 
     /* Click logout button and ensure we return to Sign In component */

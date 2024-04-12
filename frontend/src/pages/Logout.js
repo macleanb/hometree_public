@@ -26,10 +26,11 @@ const Logout = () => {
                 }
               }).then(
                 function(result) {
-                  setAuth(null);
-                  
                   // Erase the CSRF Token from cookies
                   document.cookie = 'csrftoken=; Max-Age=-99999999;';
+
+                  // Update Auth state to initial state
+                  setAuth({status: constants.STATUS_AWAITING_DATA}); 
           
                   // Before navigating to Login, wait a sec to ensure props/context items update
                   setTimeout(1000);

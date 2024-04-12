@@ -1,0 +1,22 @@
+.button_size_add {
+  height: 2.5rem !important;
+  margin-left: 20px !important;
+}
+
+.select_size {
+  /* width: min-content; */
+  width: 380px;
+  margin: 5px 10px 0px 0px;
+  font-size: min(4vw, 16px);
+  color: black;
+  border: 1px solid lightgray !important;
+}
+
+.form_group_size {
+  width: 45vw;
+}
+
+.inner_div_size {
+  width: 45vw;
+  justify-content: left;
+}

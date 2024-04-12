@@ -1,12 +1,8 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Imports */
 import { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 
-/* Internal Libraries */
+/* Internal Imports */
 import PolicyInputs from '../components/PolicyInputs';
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';

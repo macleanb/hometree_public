@@ -46,6 +46,7 @@ import {
   residenceDataIsEmpty,
   updateResidence
 } from '../utils/residenceUtils';
+import styles from './FormManager.module.css';
 import SuccessContext from '../contexts/SuccessProvider';
 import updateAnnouncement from '../utils/announcement/updateAnnouncement';
 import updatePolicy from '../utils/policy/updatePolicy';
@@ -1258,10 +1259,10 @@ const FormManager = ({
           <h1 className="mb-4 text-wrap colorsettings_bodyheaders">
             Do you want to add a mailing address?
           </h1>
-          <div className="d-flex mb-4 flex-wrap justify-content-center align-items-center">
-            <div className="d-flex flex-wrap justify-content-center">
+          <div className={`d-flex mb-4 flex-wrap justify-content-center align-items-center`}>
+            <div className={`${styles.button_container_size} d-flex flex-wrap justify-content-evenly`}>
               <Button
-                className="ms-5 me-5 colorsettings_buttonfilled"
+                className="colorsettings_buttonfilled"
                 id="button-yes"
                 variant="primary"
                 type="button"
@@ -1269,7 +1270,7 @@ const FormManager = ({
                 Yes
               </Button>
               <Button
-                className="ms-5 me-5 colorsettings_buttonoutline"
+                className="colorsettings_buttonoutline"
                 id="button-skip"
                 variant="outline-primary"
                 type="button"

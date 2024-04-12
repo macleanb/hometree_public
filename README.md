@@ -80,7 +80,7 @@ TODO:
       Add a neighborhood chat function
     
     Deploy:
-      Register (Sign Up) link pops up and then returns 404, and navigating directly to /login doesnt work
+      hostname changed again so you have to update frontend constants and rebuild.  Try just using the elastic IP
       Add images to users/residences
       get https working (watch Adam's video)
 

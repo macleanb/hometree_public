@@ -24,7 +24,8 @@ const constants = {
                     //BASE_URL: 'http://localhost:8000/api/v1',
 
                     /* For production & deployment */
-                    BASE_URL: 'http://ec2-3-134-95-76.us-east-2.compute.amazonaws.com/api/v1', // for AWS server
+                    //BASE_URL: 'http://3.142.226.144/api/v1', // elastic IP for AWS server
+                    BASE_URL: 'http://ht-demo.duckdns.org/api/v1', // free DuckDNS sub-domain
 
                     LOGIN_URL:                        '/users/login',
                     LOGOUT_URL:                       '/users/logout',

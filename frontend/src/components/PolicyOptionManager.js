@@ -1,10 +1,11 @@
-/* External Libraries */
+/* External Imports */
 import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-/* Internal Libraries */
+/* Internal Imports */
 import constants from '../constants';
+import styles from './PolicyOptionManager.module.css';
 
 /* This component provides input fields and controls for policy
    options to be added to policy forms */
@@ -36,9 +37,9 @@ const PolicyOptionManager = ({
 
   return (
     <div className={ `d-flex flex-wrap justify-content-center align-items-center ${ bootstrapSettings ? bootstrapSettings : 'mb-4' }`}>
-      <Form.Group className="mb-3 ms-1 me-1 text-start" controlId={ constants.FIELD_NAME_OPTION_INPUT }>
+      <Form.Group className={`${ styles.form_group_size } mb-3 ms-1 me-1 text-start`} controlId={ constants.FIELD_NAME_OPTION_INPUT }>
         <Form.Label className="colorsettings_listtext">{ "Manage Options"}</Form.Label>
-        <div className="d-flex flex-wrap optioninputdiv">
+        <div className={`${styles.inner_div_size} d-flex flex-wrap`}>
           <Form.Control
             className="mb-0 optioninputfield"
             type="text" 
@@ -47,13 +48,13 @@ const PolicyOptionManager = ({
             value={ formData.option_text ? formData.option_text : ''}
             name="option_text"
           />
-          <Button variant="primary" className="optionbutton" onClick={ handleAddOptionClicked }>
+          <Button variant="primary" className={ styles.button_size_add } onClick={ handleAddOptionClicked }>
               Add Option
           </Button>
         </div>
-        <div className="d-flex flex-wrap optioninputdiv">
+        <div className={`${styles.inner_div_size} d-flex flex-wrap`}>
           <Form.Select
-            className="mt-1 text-gray-700 optioninputselect"
+            className={`${ styles.select_size } optioninputselect`}
             aria-label="select option to remove"
             onChange={ (e) => { 
               setSelectedOptionInOptionSelect(e.target.value)

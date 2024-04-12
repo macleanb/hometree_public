@@ -128,7 +128,6 @@ const SelfRegistration = () => {
     }
   }, [auth, navigate]); // Re-run each time a dependency comes to life
 
-
   ///////////////
   ///  Render ///
   ///////////////

@@ -1,12 +1,8 @@
-////////////////
-///  Imports ///
-////////////////
-
-/* External Libraries */
+/* External Imports */
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-/* Internal Libraries */
+/* Internal Imports */
 import AuthContext from '../contexts/AuthProvider';
 import BackEndErrorContext from '../contexts/BackEndErrorProvider';
 import constants from '../constants';
@@ -24,8 +20,6 @@ import ErrorDisplay from '../components/ErrorDisplay';
 import NavContainer from '../components/NavContainer';
 import SuccessContext from '../contexts/SuccessProvider';
 import SuccessDisplay from '../components/SuccessDisplay';
-
-
 
 /*  This component renders a NavContainer, ErrorDisplay, SuccessDisplay, 
     UsersDisplay, and generic FormContainer that allows CRUD operations
@@ -299,8 +293,8 @@ const UserProfileManager = () => {
         <NavContainer />
         <ErrorDisplay className="colorsettings_bodybackground"/>
         <SuccessDisplay />
-        <div className="d-flex flex-wrap justify-content-start userprofilemanagercontainer">
-          <div className="d-flex me-5 flex-column flex-fill userformcontainer">
+        <div className="d-flex justify-content-start userprofilemanagercontainer">
+          <div className="d-flex flex-column flex-fill">
             <FormManager
               formData={ formData }
               formType={ formType }
