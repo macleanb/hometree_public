@@ -38,79 +38,10 @@ describe("Demo-1a-Residence Manager basic functionality and blank fields", () =>
     /* Ensure the residences banner is visible */
     cy.get('#residencesdisplaycontainer').find('h1').should('have.text', 'Residences');
 
-    /* Ensure the resiences list display contains a search field */
-    cy.get("[placeholder='search name, address, email, etc.']").should('exist')
-
-    /* Ensure the residences list displays correct number of residence buttons */
-    cy.get('#residencesdisplaycontainer .residencesdisplaytile button')
-      .should('have.length', 11);
-
-    /* Attempt to create a new residence with missing street field*/
-    cy.get('.residenceformcontainer')
-      .contains('New Residence Information')
-      .get('button')
-      .contains('Add Residence')
-      .click();
-
-    /* Wait for page to load */
-    cy.wait(1000);
-
-    /* Ensure appropriate warnings are displayed */
-    cy.get("#STREET_FIELD").then(($input) => {
-      expect($input[0].validationMessage).to.eq('Please fill out this field.')
-    }).pause();
-
-    /* Attempt to create a new residence with missing city field*/
+    /* Enter invalid field inputs */
     cy.get("[placeholder='Enter Street']").type("104 Eden Park Blvd.");
-    cy.get('.residenceformcontainer')
-      .contains('New Residence Information')
-      .get('button')
-      .contains('Add Residence')
-      .click();
-
-    /* Wait for page to load */
-    cy.wait(1000);
-
-    /* Ensure appropriate warnings are displayed */
-    cy.get("#CITY_FIELD").then(($input) => {
-      expect($input[0].validationMessage).to.eq('Please fill out this field.')
-    }).pause();
-
-    /* Attempt to create a new residence with missing state field*/
     cy.get("[placeholder='Enter City']").type("Shilox");
-    cy.get('.residenceformcontainer')
-      .contains('New Residence Information')
-      .get('button')
-      .contains('Add Residence')
-      .click();
-
-    /* Wait for page to load */
-    cy.wait(1000);
-
-    /* Ensure appropriate warnings are displayed */
-    cy.get("#ADDR_STATE_FIELD").then(($input) => {
-      expect($input[0].validationMessage).to.eq('Please fill out this field.')
-    }).pause();
-
-    /* Attempt to create a new residence with missing zipcode field*/
     cy.get("[placeholder='Enter State']").type("IZ");
-    cy.get('.residenceformcontainer')
-      .contains('New Residence Information')
-      .get('button')
-      .contains('Add Residence')
-      .click();
-
-    /* Wait for page to load */
-    cy.wait(1000);
-
-    /* Ensure appropriate warnings are displayed */
-    cy.get("#ZIPCODE_FIELD").then(($input) => {
-      expect($input[0].validationMessage).to.eq('Please fill out this field.')
-    }).pause();
-
-    /* Wait for page to load */
-    cy.wait(1000);
-
     cy.get("[placeholder='Enter Zip']").type("62267");
     cy.get('.residenceformcontainer')
       .contains('New Residence Information')

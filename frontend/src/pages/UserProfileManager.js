@@ -18,6 +18,7 @@ import {
 } from '../utils/userUtils';
 import ErrorDisplay from '../components/ErrorDisplay';
 import NavContainer from '../components/NavContainer';
+import styles from './UserProfileManager.module.css';
 import SuccessContext from '../contexts/SuccessProvider';
 import SuccessDisplay from '../components/SuccessDisplay';
 
@@ -293,8 +294,8 @@ const UserProfileManager = () => {
         <NavContainer />
         <ErrorDisplay className="colorsettings_bodybackground"/>
         <SuccessDisplay />
-        <div className="d-flex justify-content-start userprofilemanagercontainer">
-          <div className="d-flex flex-column flex-fill">
+        <div className="d-flex justify-content-center userprofilemanagercontainer">
+          <div className={`d-flex flex-column flex-fill ${styles.container_size}`}>
             <FormManager
               formData={ formData }
               formType={ formType }
