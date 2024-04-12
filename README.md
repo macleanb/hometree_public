@@ -65,6 +65,12 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
+      mobile:
+      - make mapoffcanvas go lower to encompass entire map on my phone
+      - make basic policies dashboard offcanvas go lower
+      - basic user policies list cuts off the top
+        - how to set scrolling behavior to start at the top?
+      - address form should auto-focus street
       update residence 124 with picture then re-download fixtures
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
