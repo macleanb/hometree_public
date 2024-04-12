@@ -65,17 +65,12 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
-      mobile:
-      - make mapoffcanvas go lower to encompass entire map on my phone
-      - make basic policies dashboard offcanvas go lower
-      - address form should auto-focus street
       update residence 124 with picture then re-download fixtures
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
       use httponly cookies (see Adam's video and demo code)
              
     Backend:
-      add 'http://ht-demo.duckdns.org/api/v1' to django settings trusted origins etc.
       enable https
       enable domain name/dns
       enable httponly cookies

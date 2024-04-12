@@ -102,7 +102,7 @@ const ResidencePolicyChoicesOffCanvas = (
   if (auth && auth.status && auth.status === constants.STATUS_AUTHENTICATED) {
     return (
       <Offcanvas 
-        className={`h-75`}
+        className={`h-100`}
         show={ showOffCanvas }
         onHide={ handleClose }
         placement="top"

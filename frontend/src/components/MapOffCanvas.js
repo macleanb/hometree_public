@@ -107,7 +107,7 @@ const MapOffCanvas = ({parentState}) => {
       </Button>
 
       <Offcanvas 
-        className={`h-75`}
+        className={`h-100`}
         show={ show }
         onHide={ handleClose }
         placement="top"
