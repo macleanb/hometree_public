@@ -3,12 +3,12 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.visit("/");
 
     /* Enter basic user information and click Sign In button */
-    cy.get("[placeholder='Enter email']").type('italo@email.com');
+    cy.get("[placeholder='Enter email']").type('johnb@email.com');
     cy.get("[placeholder='Enter password']").type('testtest');
     cy.get("div button").should("have.text", "Sign In").click();
 
     /* Ensure profile link has correct text */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Italo   Ferriera");
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   Backus");
 
     /* Ensure temperature display exists */
     cy.get("#temp-display").contains("Shiloh, IL:");

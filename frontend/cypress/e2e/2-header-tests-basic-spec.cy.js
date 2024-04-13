@@ -3,12 +3,12 @@ describe("2-Header Tests for Basic User", () => {
     cy.visit("/");
 
     /* Enter basic user information and click Sign In button */
-    cy.get("[placeholder='Enter email']").type('italo@email.com');
+    cy.get("[placeholder='Enter email']").type('johnb@email.com');
     cy.get("[placeholder='Enter password']").type('testtest');
     cy.get("div button").should("have.text", "Sign In").click();
 
     /* Ensure profile link has correct text */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Italo   Ferriera");
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   Backus");
 
     /* Ensure temperature display exists */
     cy.get("#temp-display").contains("Shiloh, IL:");
@@ -32,7 +32,7 @@ describe("2-Header Tests for Basic User", () => {
     cy.get('.navbar-nav > .dropdown').should('not.exist');
 
     /* Ensure profile link has correct text and click on it */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Italo   Ferriera").click();
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   Backus").click();
 
     /* Wait a second to let all the API data arrive */
     cy.wait(1000);
@@ -44,7 +44,7 @@ describe("2-Header Tests for Basic User", () => {
     cy.wait(1000);
 
     /* Ensure profile link has correct text and click on it */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Italo   Ferriera");
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   Backus");
 
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();

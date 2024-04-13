@@ -72,10 +72,10 @@ describe("1-Self-Registration Tests", () => {
     cy.get("div h1").should("have.text", "New User Information");
 
     /* Enter valid user information and click Complete Registration button */
-    cy.get("[placeholder='Enter e-mail address']").type('jamie@email.com');
+    cy.get("[placeholder='Enter e-mail address']").type('johnb@email.com');
     cy.get("[placeholder='Enter password']").type('testtest');
-    cy.get("[placeholder='Enter first name']").type('Jamie');
-    cy.get("[placeholder='Enter last name']").type('Obrien');
+    cy.get("[placeholder='Enter first name']").type('John');
+    cy.get("[placeholder='Enter last name']").type('Backus');
 
     cy.get("div button").should("have.text", "Complete Registration").click();
 

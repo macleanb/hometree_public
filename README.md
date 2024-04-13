@@ -74,7 +74,6 @@ TODO:
         window.scrollTo(0, 0)
       }, [])
       update residence 124 with picture then re-download fixtures
-      replace all users with old users (SJ, etc)
       for some reason mobile user can't press the button to update their user profile (image upload)
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
@@ -87,7 +86,6 @@ TODO:
       Add a neighborhood chat function
     
     Deploy:
-      Upload announcement pictures
       Change names of presidents to Rick, Morty, Pikachu
       Upload all other pictures for users/residences
       hostname changed again so you have to update frontend constants and rebuild.  Try just using the elastic IP

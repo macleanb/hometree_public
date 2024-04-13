@@ -6,12 +6,12 @@ describe("0-Login and Logout Tests", () => {
     cy.get("div h1").should("have.text", "Sign In");
 
     /* Enter valid user information and click Sign In button */
-    cy.get("[placeholder='Enter email']").type('italo@email.com');
+    cy.get("[placeholder='Enter email']").type('johnb@email.com');
     cy.get("[placeholder='Enter password']").type('testtest');
     cy.get("div button").should("have.text", "Sign In").click();
 
     /* Ensure input fields have expected text */
-    cy.get("[href='/userprofilemanager']").should("have.text", "Italo   Ferriera");
+    cy.get("[href='/userprofilemanager']").should("have.text", "John   Backus");
 
     /* Wait a second to let all the API data arrive */
     cy.wait(1000);
@@ -45,7 +45,7 @@ describe("0-Login and Logout Tests", () => {
     cy.visit("/");
 
     /* Provide valid email but no password */
-    cy.get("[placeholder='Enter email']").type('italo@email.com');
+    cy.get("[placeholder='Enter email']").type('johnb@email.com');
     cy.get("div button").should("have.text", "Sign In").click();
 
     /* Ensure one input is valid and the other is invalid */
@@ -65,7 +65,7 @@ describe("0-Login and Logout Tests", () => {
     cy.visit("/");
 
     /* Enter complete but invalid user credentials and click Sign In button */
-    cy.get("[placeholder='Enter email']").type('italo');
+    cy.get("[placeholder='Enter email']").type('john');
     cy.get("[placeholder='Enter password']").type('testtest');
     cy.get("div button").should("have.text", "Sign In").click();
 
