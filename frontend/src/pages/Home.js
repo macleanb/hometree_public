@@ -79,6 +79,11 @@ const Home = () => {
   /* Use Effects */
   /////////////////
 
+  /* Scroll to top of screen (for mobile) */
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   /* Ensure the user is logged in.  If so, load residence data. If not, redirect to login. */
   useEffect(() => {
     if (auth && auth.status && navigate) {

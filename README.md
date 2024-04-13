@@ -48,6 +48,9 @@ npx cypress run
 ## Most important
 13.  Have fun, and feel free to create your own user account with a profile picture!
 
+## Notes
+* Any images uploaded to deployed site should be less than 1MB
+
 
 Design:
 The HOA app will use Google API to allow users to create accounts and log in using their Google credentials
@@ -65,7 +68,14 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
+      mobile: users who log in scroll to center of page
+      use:
+      useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
       update residence 124 with picture then re-download fixtures
+      replace all users with old users (SJ, etc)
+      for some reason mobile user can't press the button to update their user profile (image upload)
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
       use httponly cookies (see Adam's video and demo code)
@@ -77,6 +87,9 @@ TODO:
       Add a neighborhood chat function
     
     Deploy:
+      Upload announcement pictures
+      Change names of presidents to Rick, Morty, Pikachu
+      Upload all other pictures for users/residences
       hostname changed again so you have to update frontend constants and rebuild.  Try just using the elastic IP
       Add images to users/residences
       get https working (watch Adam's video)
