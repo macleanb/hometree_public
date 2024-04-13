@@ -19,34 +19,10 @@ const PolicyChoiceCard = ({
         {
           obj.options?.length > 0
           ?
-            // <div className="d-flex flex-wrap optioninputdiv">
             <div className={`${styles.inner_container } d-flex px-2 flex-wrap w-100`}>
               <h5 className="py-2 m-0 me-1">
                 { obj.fk_Residence?.fk_Address?.street }:
               </h5>
-              {/* <Form.Select
-                className="mt-1 ms-2 text-gray-700 optioninputselect"
-                aria-label="select option to remove"
-                onChange={ (e) => {
-                  if (selectedPolicyOptions && obj?.fk_Residence?.id) {
-                    const tempSelectedPolicyOptions = {...selectedPolicyOptions};
-                    tempSelectedPolicyOptions[obj.fk_Residence.id] = e.target.value;
-                    setSelectedPolicyOptions(tempSelectedPolicyOptions);
-                  }
-                }}
-                value={
-                  selectedPolicyOptions && obj?.fk_Residence?.id && selectedPolicyOptions[obj.fk_Residence.id]
-                  ?
-                    selectedPolicyOptions[obj.fk_Residence.id]
-                  : -1
-                }
-              >
-                {
-                  obj.options.map((option, index) => {
-                    return <option key={option?.id? option.id : index} value={option?.id? option.id : index}>{`${option?.option_text ? option.option_text : 'no option text exists'}`}</option>
-                  })
-                }
-              </Form.Select> */}
               <Form.Select
                 className={`${styles.select_size} optioninputselect`}
                 aria-label="select option to remove"

@@ -20,12 +20,14 @@ const constants = {
                     FIELD_NAME_POLICY_DESCRIPTION: 'POLICY_DESCRIPTION_FIELD',
                     FIELD_NAME_POLICY_EFFECTIVE_DATE: 'POLICY_EFFECTIVE_DATE_FIELD',
                     
-                    /* For test */
-                    //BASE_URL: 'http://localhost:8000/api/v1',
+                    /* For development & test */
+                    //BASE_URL:  'http://localhost:8000/api/v1',
+                    //IMAGE_URL: 'http://localhost:8000/',
 
                     /* For production & deployment */
                     //BASE_URL: 'http://3.142.226.144/api/v1', // elastic IP for AWS server
                     BASE_URL: 'http://ht-demo.duckdns.org/api/v1', // free DuckDNS sub-domain
+                    IMAGE_URL: 'http://ht-demo.duckdns.org/',
 
                     LOGIN_URL:                        '/users/login',
                     LOGOUT_URL:                       '/users/logout',

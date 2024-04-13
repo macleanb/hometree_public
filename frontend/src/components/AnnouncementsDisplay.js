@@ -13,6 +13,7 @@ import { Search } from 'react-bootstrap-icons';
 import AnnouncementCard from './AnnouncementCard';
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
+import getURL_BackendImage from '../utils/getURL_BackendImage';
 import filterAnnouncements from '../utils/announcement/filterAnnouncements';
 import styles from './AnnouncementsDisplay.module.css';
 
@@ -183,7 +184,7 @@ const AnnouncementsDisplay = (
                         <ListGroup.Item className="p-0" key={ index } action onClick={ () => handleAnnouncementClicked(obj) } variant="light">
                           <div key={ index } className="d-flex p-2 flex-wrap justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
                             <div className="d-flex align-items-center">
-                              <img src={ obj.image } width="100" height="100" alt="announcement"/>
+                              <img src={ getURL_BackendImage(obj.image) } width="100" height="100" alt="announcement"/>
                             </div>
                             
                             <div className="d-flex flex-column justify-content-center ms-4">

@@ -68,26 +68,20 @@ It will feature reusable, composite forms that support nexted CRUD (users, addre
 
 TODO:
     Frontend:
-      mobile: users who log in scroll to center of page
-      use:
-      useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
-      update residence 124 with picture then re-download fixtures
-      for some reason mobile user can't press the button to update their user profile (image upload)
       wrap backend API calls in useEffect (use 'active' variable)
       enable https
       use httponly cookies (see Adam's video and demo code)
              
     Backend:
+      re-download fixtures
       enable https
       enable domain name/dns
       enable httponly cookies
       Add a neighborhood chat function
     
     Deploy:
-      Change names of presidents to Rick, Morty, Pikachu
       Upload all other pictures for users/residences
+      Populate some votes to match developmental policies
       hostname changed again so you have to update frontend constants and rebuild.  Try just using the elastic IP
       Add images to users/residences
       get https working (watch Adam's video)

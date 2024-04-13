@@ -1,9 +1,9 @@
 .image_size {
-  width: 15vw;
+  width: max(10vw, 200px);
   height: auto;
   float: left;
   margin-top: .5vw;
-  margin-right: 1vw;
+  margin-right: 10px;
 }
 
 .text_clear {
@@ -13,4 +13,10 @@
 .title_text {
   font-size: max(2vw, 18px);
   font-weight: bold;
+}
+
+@media (max-width: 556px) {
+  .image_size {
+    width: 35vw;
+  }
 }

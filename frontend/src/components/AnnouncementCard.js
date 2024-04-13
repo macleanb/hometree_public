@@ -2,6 +2,7 @@
 import Card from 'react-bootstrap/Card';
 
 /* Internal Imports */
+import getURL_BackendImage from '../utils/getURL_BackendImage';
 import styles from './AnnouncementCard.module.css';
 
 /* For displaying detailed information for a given record object. */
@@ -15,7 +16,7 @@ const AnnouncementCard = ({ keyValue, obj }) => {
               {
                 obj?.image
                 ?
-                  <Card.Img className={styles.image_size} src={ obj?.image ? obj.image : ''} alt="announcement summary information"/>
+                  <Card.Img className={styles.image_size} src={ obj?.image ? getURL_BackendImage(obj.image) : ''} alt="announcement summary information"/>
                 : ''
               }
               <Card.Text className={`${styles.text_clear} announcementcardtext`}>

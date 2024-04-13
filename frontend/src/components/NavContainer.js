@@ -18,6 +18,7 @@ import SuccessContext from '../contexts/SuccessProvider';
 /* Internal Imports */
 import { getClient } from '../utils/apiUtils';
 import getTemperatureURL from '../utils/getTemperatureURL';
+import getURL_BackendImage from '../utils/getURL_BackendImage';
 import getURL_WeatherIcon from '../utils/getURL_WeatherIcon';
 import styles from './NavContainer.module.css';
 
@@ -90,7 +91,6 @@ const NavContainer = () => {
     
     return (
       <Navbar expand="lg" className="shadow justify-content-center colorsettings_navbackground navbar">
-        {/* <Container className="ms-1 me-3 mw-100 w-100"> */}
         <Container fluid>
           <div className="d-flex">
             <img className={styles.toggleable_img} src={ logo } width={50} height={40} alt="tree silhouette logo"></img>
@@ -144,7 +144,7 @@ const NavContainer = () => {
                       <b>
                         {
                           auth.user.image ?
-                            <img src={ auth.user.image } className="me-2 profileimage" width="50" height="50" alt="profile"/>
+                            <img src={ getURL_BackendImage(auth.user.image) } className="me-2 profileimage" width="50" height="50" alt="profile"/>
                                       : ''
                         }
                         { getAuthFirstName(auth) } {' '} { getAuthLastName(auth) }
