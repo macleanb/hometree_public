@@ -93,6 +93,50 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get('.residencepolicychoicescontainer').find('h3')
       .should('have.text', 'Current community policy: Rick (50% of votes)');
 
+    /* Click on a different policy and ensure the correct options load */
+    cy.get('.policiesdisplaytile')
+      .get('.policy-list-card')
+      .contains('Cars must be parked in garages overnight:')
+      .click();
+
+    /* Wait for page load */
+    cy.wait(1000);
+
+    cy.get('.residencepolicychoicescontainer').find('h2')
+      .should('have.text', "Should residents' cars be parked only in garages overnight?");
+
+    cy.get('.optioninputselect').first().get('option')
+      .should('have.length', 3)
+      .first()
+      .should('have.text', 'No option selected');
+
+    cy.get('.optioninputselect').first().get('option')
+      .eq(1)
+      .should('have.text', 'Yes');
+
+    cy.get('.optioninputselect').first().get('option')
+      .eq(2)
+      .should('have.text', 'No');
+
+    /* Click back to the original policy to ensure all policy options load correctly */
+    cy.get('.policiesdisplaytile').get('.policy-list-card').contains('The HOA President is:').click();
+
+    /* Wait for page load */
+    cy.wait(1000);
+
+    cy.get('.optioninputselect').first().get('option')
+      .should('have.length', 3)
+      .first()
+      .should('have.text', 'Rick');
+
+    cy.get('.optioninputselect').first().get('option')
+      .eq(1)
+      .should('have.text', 'Morty');
+
+    cy.get('.optioninputselect').first().get('option')
+      .eq(2)
+      .should('have.text', 'Pikachu');
+
     /* Click logout button and ensure we return to Sign In component */
     cy.get("[href='/logout']").should("have.text", "Logout").click();
 

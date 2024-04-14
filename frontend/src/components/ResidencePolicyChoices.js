@@ -39,7 +39,7 @@ const ResidencePolicyChoices = (
 
   /* Sorts the residencePolicyChoicesDisplayArr, by street address */
   const setSortedResidencePolicyChoicesDisplayArr = () => {
-    if (residencePolicyChoicesDataArr) {
+    if (Array.isArray(residencePolicyChoicesDataArr)) {
       // const sortedArr = residencePolicyChoicesDataArr.sort(function (a, b) {
       //   /* Compare just the street numbers */
       //   const reLeadingNumbersA = /^[0-9]+/;
@@ -85,10 +85,10 @@ const ResidencePolicyChoices = (
 
   /* Set residencePolicyChoicesDisplayArr once residencePolicyChoicesData is loaded */
   useEffect(() => {
-    if ( residencePolicyChoicesDataArr?.length > 0) {
+    if ( Array.isArray(residencePolicyChoicesDataArr)) {
       setSortedResidencePolicyChoicesDisplayArr();
     }
-  }, [residencePolicyChoicesDataArr]);
+  }, [JSON.stringify(residencePolicyChoicesDataArr)]);
 
   //////////////
   /*  Render  */
@@ -110,7 +110,6 @@ const ResidencePolicyChoices = (
               Current community policy: { currentCommunityPolicy?.policyOption ? currentCommunityPolicy.policyOption.option_text : 'No current policy' } { currentCommunityPolicy?.percentage ? '(' + currentCommunityPolicy.percentage + '% of votes)' : ''}
             </b>
         </h3>
-        {/* <div className="d-flex m-0 p-2 justify-content-center colorsettings_bodybackground widthsettings_residencepolicychoicetile residencepolicychoicetile"> */}
         <div className="d-flex m-0 p-2 justify-content-center colorsettings_bodybackground">
           {
             residencePolicyChoicesDisplayArr?.length > 0

@@ -25,7 +25,7 @@ const PolicyChoiceCard = ({
               </h5>
               <Form.Select
                 className={`${styles.select_size} optioninputselect`}
-                aria-label="select option to remove"
+                aria-label="select option"
                 onChange={ (e) => {
                   if (selectedPolicyOptions && obj?.fk_Residence?.id) {
                     const tempSelectedPolicyOptions = {...selectedPolicyOptions};

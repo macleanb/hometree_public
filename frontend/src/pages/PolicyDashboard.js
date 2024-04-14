@@ -112,7 +112,7 @@ const PolicyDashboard = () => {
 
     /* Ensure dependencies are all valid before proceeding */
     if (
-      Array.isArray(rawResidencePolicyChoices) &&
+      Array.isArray(await rawResidencePolicyChoices) &&
       Array.isArray(options) &&
       Array.isArray(residencesForUserArr) &&
       residencesForUserDict && 
@@ -123,26 +123,31 @@ const PolicyDashboard = () => {
       const residencesWithPolicyChoices = new Set();
       const publicResidencePolicyChoices = [];
       const anonymousResidencePolicyChoices = [];
-      let residencePolicyChoicesArr = [];
+      const tempSelectedPolicyOptions = {...selectedPolicyOptions}; // will update state
+      const tempPolicyChoicePublicVisibilities = {...policyChoicePublicVisibilities}; // will update state
 
       /* Gather policy choices owned by the user. Insert an options array to each. */
       for (const residencePolicyChoice of rawResidencePolicyChoices) {
         if (residencePolicyChoice.fk_Residence?.id in residencesForUserDict) {
           const residenceID = residencePolicyChoice.fk_Residence.id;
-
           residencePolicyChoice['options'] = options;
 
           /* Update selectedPolicyOptions state with the current residence ID and selected option ID */
           const selectedOptionID = residencePolicyChoice.fk_PolicyOption.id;
           const makePublicSelection = residencePolicyChoice.make_public;
-          selectedPolicyOptions[residenceID] = selectedOptionID;
-          policyChoicePublicVisibilities[residenceID] = makePublicSelection;
+
+          /* Append selected option for current residence's choice */
+          tempSelectedPolicyOptions[residenceID] = selectedOptionID;
+
+          /* Append public visibility for current residence's choice */
+          tempPolicyChoicePublicVisibilities[residenceID] = makePublicSelection;
 
           usersResidencePolicyChoices.push(residencePolicyChoice);
           residencesWithPolicyChoices.add(residenceID);
         }
       }
-      setSelectedPolicyOptions(selectedPolicyOptions);
+      setSelectedPolicyOptions(tempSelectedPolicyOptions);
+      setPolicyChoicePublicVisibilities(tempPolicyChoicePublicVisibilities);
 
       /* For any user's residence that doesn't have a corresponding policy choice,
          create an options array that includes a blank option (key '-1') */
@@ -200,33 +205,12 @@ const PolicyDashboard = () => {
         }
       }
 
-      residencePolicyChoicesArr = usersResidencePolicyChoices;
+      let residencePolicyChoicesArr = usersResidencePolicyChoices;
       residencePolicyChoicesArr = residencePolicyChoicesArr.concat(publicResidencePolicyChoices);
       residencePolicyChoicesArr = residencePolicyChoicesArr.concat(anonymousResidencePolicyChoices);
 
       /* Update residencePolicyChoicesDataArr state */
       setResidencePolicyChoicesDataArr(residencePolicyChoicesArr);
-
-      // /* Count the frequencies of each policy choice and update 
-      //    currentCommunityPolicy state */
-      // const residencePolicyChoiceFreqs = frequencyCounter(residencePolicyChoicesArr, 'fk_PolicyOption', 'id', [-1]);
-      // if (residencePolicyChoiceFreqs?._totalCount > 0) {
-      //   let mostFrequentPolicyOption = { option_text: 'votes are tied: no current policy' }
-      //   const maxFrequency = residencePolicyChoiceFreqs['_maxFreq'];
-      //   const totalCount = rawResidencePolicyChoices.length;
-      //   const percentage = (maxFrequency / totalCount)*100;
-
-      //   if (residencePolicyChoiceFreqs._maxKeyArr.length === 1) { // votes are NOT tied
-      //     const mostFrequentPolicyChoice = residencePolicyChoiceFreqs['_maxKeyArr'][0]; // the single most popular PolicyOption id
-      //     const mostFrequentPolicyOptionIndex = indexOfObj(mostFrequentPolicyChoice, options);
-
-      //     if (mostFrequentPolicyOptionIndex >= 0) {
-      //       mostFrequentPolicyOption = options[mostFrequentPolicyOptionIndex];
-      //     }
-      //   }
-
-      //   setCurrentCommunityPolicy({ policyOption: mostFrequentPolicyOption, percentage: percentage.toFixed(0)})
-      // }
     }  else {
       setResidencePolicyChoicesDataArr(null);
     }
@@ -455,19 +439,16 @@ const PolicyDashboard = () => {
     }
   }, [selectedPolicyData]);
 
-  /* When selectedPolicyData changes, populate the residencePolicyChoicesDataArr. */
+  /* Once options are loaded/updated, load policy choices */
   useEffect(() => {
     if (
-      allResidencesDataDict &&
       options &&
-      selectedPolicyData &&
-      typeof residencesForUserDict !== 'undefined' &&
-      residencesForUserDict !== null
+      selectedPolicyData
       )
     {
       loadResidencePolicyChoicesDataFromBackend(selectedPolicyData.id);
     }
-  }, [allResidencesDataDict, options, selectedPolicyData, residencesForUserDict]);
+  }, [JSON.stringify(options)]);
 
   /* Once residencesForUserArr is populated, populate the residencesForUserDict. */
   useEffect(() => {
@@ -479,10 +460,10 @@ const PolicyDashboard = () => {
   /* Whenever residencePolicyChoicesDataArr is updated, update the 
      community policy that is displayed */
   useEffect(() => {
-    if (residencePolicyChoicesDataArr?.length > 0) {
+    if (Array.isArray(residencePolicyChoicesDataArr)) {
       updateCurrentCommunityPolicy();
     }
-  }, [residencePolicyChoicesDataArr]);
+  }, [JSON.stringify(residencePolicyChoicesDataArr)]);
 
   ////////////
   /* Render */

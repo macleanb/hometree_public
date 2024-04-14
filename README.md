@@ -80,6 +80,7 @@ TODO:
       Add a neighborhood chat function
     
     Deploy:
+      Delete all residences/users that don't belong
       Upload all other pictures for users/residences
       Populate some votes to match developmental policies
       hostname changed again so you have to update frontend constants and rebuild.  Try just using the elastic IP
