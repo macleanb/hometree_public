@@ -1,0 +1,15 @@
+.col_size {
+  width: 100%;
+}
+
+.outer_container_size {
+  width: 100%;
+}
+
+.percentage_text {
+  color: black;
+}
+
+.statement_font_size {
+  font-size: calc(1.325rem + .9vw);
+}
