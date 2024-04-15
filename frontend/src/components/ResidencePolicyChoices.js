@@ -107,8 +107,19 @@ const ResidencePolicyChoices = (
           className={`${styles.statement_font_size} mt-2 mb-5 text-primary`}
         >
             <b>
-              Current community policy: { currentCommunityPolicy?.policyOption ? currentCommunityPolicy.policyOption.option_text : 'No current policy' } { currentCommunityPolicy?.percentage ? '(' + currentCommunityPolicy.percentage + '% of votes)' : ''}
+              { currentCommunityPolicy?.policyOption
+                ?
+                  currentCommunityPolicy.policyOption.option_text + ' '
+                : 'No current policy'
+              }
             </b>
+            <span className={ styles.percentage_text }>
+              { currentCommunityPolicy?.policyOption && currentCommunityPolicy?.percentage && currentCommunityPolicy.percentage > 0
+                ?
+                  '(' + currentCommunityPolicy.percentage + '% of votes)'
+                : ''
+              }
+            </span>
         </h3>
         <div className="d-flex m-0 p-2 justify-content-center colorsettings_bodybackground">
           {

@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.percentage_text {
+  color: black;
+}
+
 .question_font_size {
   font-size: min(2vw, 20px);
 }

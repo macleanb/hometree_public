@@ -51,7 +51,7 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get('.residencepolicychoicescontainer').find('h2')
       .should('have.text', 'Who should be the HOA President?');
     cy.get('.residencepolicychoicescontainer').find('h3')
-      .should('have.text', 'Current community policy: Rick (50% of votes)');
+      .should('have.text', 'Rick (50% of votes)');
 
     /* Ensure the correct number of residence policy choices displayed */
     cy.get('.residencepolicychoicescontainer').get('.policychoicecard').should('have.length', 4);
@@ -73,7 +73,7 @@ describe("5-Policies Page Tests for Basic User", () => {
 
     /* Ensure the updated policy is displayed */
     cy.get('.residencepolicychoicescontainer').find('h3')
-      .should('have.text', 'Current community policy: N/A - votes are tied or non-existent (50% of votes)');
+      .should('have.text', 'N/A - votes are tied or non-existent (50% of votes)');
 
     cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('select').select('Morty');
     cy.get('.policychoicecard').contains('108 Eden Park Boulevard:')
@@ -91,7 +91,7 @@ describe("5-Policies Page Tests for Basic User", () => {
 
     /* Ensure the updated policy is displayed */
     cy.get('.residencepolicychoicescontainer').find('h3')
-      .should('have.text', 'Current community policy: Rick (50% of votes)');
+      .should('have.text', 'Rick (50% of votes)');
 
     /* Click on a different policy and ensure the correct options load */
     cy.get('.policiesdisplaytile')
