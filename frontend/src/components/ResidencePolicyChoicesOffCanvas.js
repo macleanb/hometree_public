@@ -111,10 +111,11 @@ const ResidencePolicyChoicesOffCanvas = (
         </Offcanvas.Header>
         <Offcanvas.Body>
           <section className={`${ styles.outer_container_size } d-flex flex-column justify-content-start p-0 colorsettings_bodybackground heightsettings_residencepolicychoicescontainer residencepolicychoicescontainer`}>
-            <h1 className="colorsettings_bodybackground colorsettings_bodyheaders"><u>Policy Choices (by residence)</u></h1>
-            <h2 className="mt-2 mb-2"><i>{ selectedPolicyData?.question ? selectedPolicyData.question : '' }</i></h2>
+            <h1 className={`${styles.title_text} colorsettings_bodybackground colorsettings_bodyheaders`}>Policy Choices</h1>
+            <h5 className={`${styles.subtitle_text} colorsettings_bodybackground colorsettings_bodyheaders`}>by residence</h5>
+            <h2 className={`${styles.question_text} mt-2 mb-2`}><i>{ selectedPolicyData?.question ? selectedPolicyData.question : '' }</i></h2>
             <h3
-              className={`${styles.statement_font_size} mt-2 mb-5 text-primary`}
+              className={`${styles.statement_text} mt-2 mb-5 text-primary`}
             >
               <b>
                 { currentCommunityPolicy?.policyOption
@@ -123,14 +124,14 @@ const ResidencePolicyChoicesOffCanvas = (
                   : 'No current policy'
                 }
               </b>
-              <span className={`${styles.percentage_text} ${styles.statement_font_size}` }>
+            </h3>
+            <h5 className={`${styles.percentage_text} ${styles.statement_font_size}` }>
                 { currentCommunityPolicy?.policyOption && currentCommunityPolicy?.percentage && currentCommunityPolicy.percentage > 0
                   ?
                     '(' + currentCommunityPolicy.percentage + '% of votes)'
                   : ''
                 }
-              </span>
-            </h3>
+            </h5>
             <div className="d-flex m-0 p-2 justify-content-center colorsettings_bodybackground">
               {
                 residencePolicyChoicesDisplayArr?.length > 0

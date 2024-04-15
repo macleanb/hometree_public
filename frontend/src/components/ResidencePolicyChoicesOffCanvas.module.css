@@ -8,8 +8,27 @@
 
 .percentage_text {
   color: black;
+  font-size: min(4vw, 16px);
+  text-align: center;
 }
 
-.statement_font_size {
+.question_text {
+  margin-left: 10px;
+}
+
+.statement_text {
+  text-align: center;
   font-size: calc(1.325rem + .9vw);
+  margin-bottom: 0px !important;
+}
+
+.subtitle_text {
+  text-align: center;
+  font-style: italic;
+}
+
+.title_text {
+  text-align: center;
+  text-decoration-line: underline;
+  margin-bottom: 0px;
 }

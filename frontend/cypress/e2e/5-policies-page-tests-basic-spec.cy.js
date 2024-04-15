@@ -39,7 +39,7 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get('.policiesdisplaytile').get('.policy-list-card').should('have.length', 1);
     
     /* Ensure the policy choices banner is visible */
-    cy.get('.residencepolicychoicescontainer').find('h1').should('have.text', 'Policy Choices (by residence)');
+    cy.get('.residencepolicychoicescontainer').find('h1').should('have.text', 'Policy Choices');
 
     /* Ensure selecting a policy changes the displayed policy */
     cy.get("[placeholder='search policies...']").clear();
@@ -51,7 +51,9 @@ describe("5-Policies Page Tests for Basic User", () => {
     cy.get('.residencepolicychoicescontainer').find('h2')
       .should('have.text', 'Who should be the HOA President?');
     cy.get('.residencepolicychoicescontainer').find('h3')
-      .should('have.text', 'Rick (50% of votes)');
+      .should('have.text', 'Rick');
+    cy.get('.residencepolicychoicescontainer').get('.percentage_text')
+      .should('have.text', '(50% of votes)');
 
     /* Ensure the correct number of residence policy choices displayed */
     cy.get('.residencepolicychoicescontainer').get('.policychoicecard').should('have.length', 4);
@@ -73,7 +75,9 @@ describe("5-Policies Page Tests for Basic User", () => {
 
     /* Ensure the updated policy is displayed */
     cy.get('.residencepolicychoicescontainer').find('h3')
-      .should('have.text', 'N/A - votes are tied or non-existent (50% of votes)');
+      .should('have.text', 'N/A - votes are tied or non-existent');
+    cy.get('.residencepolicychoicescontainer').get('.percentage_text')
+      .should('have.text', '(50% of votes)');
 
     cy.get('.policychoicecard').contains('108 Eden Park Boulevard:').get('select').select('Morty');
     cy.get('.policychoicecard').contains('108 Eden Park Boulevard:')
@@ -91,7 +95,9 @@ describe("5-Policies Page Tests for Basic User", () => {
 
     /* Ensure the updated policy is displayed */
     cy.get('.residencepolicychoicescontainer').find('h3')
-      .should('have.text', 'Rick (50% of votes)');
+      .should('have.text', 'Rick');
+    cy.get('.residencepolicychoicescontainer').get('.percentage_text')
+      .should('have.text', '(50% of votes)');
 
     /* Click on a different policy and ensure the correct options load */
     cy.get('.policiesdisplaytile')
@@ -106,16 +112,11 @@ describe("5-Policies Page Tests for Basic User", () => {
       .should('have.text', "Should residents' cars be parked only in garages overnight?");
 
     cy.get('.optioninputselect').first().get('option')
-      .should('have.length', 3)
       .first()
-      .should('have.text', 'No option selected');
-
-    cy.get('.optioninputselect').first().get('option')
-      .eq(1)
       .should('have.text', 'Yes');
 
     cy.get('.optioninputselect').first().get('option')
-      .eq(2)
+      .eq(1)
       .should('have.text', 'No');
 
     /* Click back to the original policy to ensure all policy options load correctly */

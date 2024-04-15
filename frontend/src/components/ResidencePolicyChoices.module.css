@@ -11,9 +11,22 @@
 }
 
 .question_font_size {
-  font-size: min(2vw, 20px);
+  font-size: min(4vw, 26px);
 }
 
-.statement_font_size {
-  font-size: min(2vw, 20px);
+.statement_text {
+  text-align: center;
+  font-size: calc(1.325rem + .9vw);
+  margin-bottom: 0px !important;
+}
+
+.subtitle_text {
+  text-align: center;
+  font-style: italic;
+}
+
+.title_text {
+  text-align: center;
+  text-decoration-line: underline;
+  margin-bottom: 0px;
 }
