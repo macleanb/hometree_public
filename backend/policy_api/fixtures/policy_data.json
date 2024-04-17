@@ -15,11 +15,11 @@
   "model": "policy_api.policy",
   "pk": 2,
   "fields": {
-    "statement": "Residents' cars can park on the street overnight:",
-    "question": "Should residents' cars be allowed to park on the street overnight?",
+    "statement": "Cars must be parked in garages overnight:",
+    "question": "Should residents' cars be parked only in garages overnight?",
     "description": "",
     "effective_date": "2024-01-13",
-    "fk_Author": null,
+    "fk_Author": 1,
     "image": ""
   }
 },

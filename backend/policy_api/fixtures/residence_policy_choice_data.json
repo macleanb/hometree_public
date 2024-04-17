@@ -1,16 +1,6 @@
 [
 {
   "model": "policy_api.residencepolicychoice",
-  "pk": 1,
-  "fields": {
-    "fk_Residence": 70,
-    "fk_Policy": 1,
-    "fk_PolicyOption": 3,
-    "make_public": false
-  }
-},
-{
-  "model": "policy_api.residencepolicychoice",
   "pk": 2,
   "fields": {
     "fk_Residence": 63,
@@ -45,7 +35,7 @@
   "fields": {
     "fk_Residence": 69,
     "fk_Policy": 4,
-    "fk_PolicyOption": 14,
+    "fk_PolicyOption": 15,
     "make_public": true
   }
 },
@@ -57,16 +47,6 @@
     "fk_Policy": 4,
     "fk_PolicyOption": 14,
     "make_public": true
-  }
-},
-{
-  "model": "policy_api.residencepolicychoice",
-  "pk": 7,
-  "fields": {
-    "fk_Residence": 70,
-    "fk_Policy": 4,
-    "fk_PolicyOption": 15,
-    "make_public": false
   }
 },
 {
@@ -101,16 +81,6 @@
 },
 {
   "model": "policy_api.residencepolicychoice",
-  "pk": 13,
-  "fields": {
-    "fk_Residence": 45,
-    "fk_Policy": 4,
-    "fk_PolicyOption": 14,
-    "make_public": false
-  }
-},
-{
-  "model": "policy_api.residencepolicychoice",
   "pk": 14,
   "fields": {
     "fk_Residence": 63,
@@ -121,42 +91,72 @@
 },
 {
   "model": "policy_api.residencepolicychoice",
-  "pk": 15,
-  "fields": {
-    "fk_Residence": 45,
-    "fk_Policy": 5,
-    "fk_PolicyOption": 16,
-    "make_public": true
-  }
-},
-{
-  "model": "policy_api.residencepolicychoice",
   "pk": 16,
   "fields": {
     "fk_Residence": 69,
     "fk_Policy": 5,
-    "fk_PolicyOption": 16,
+    "fk_PolicyOption": 17,
     "make_public": true
   }
 },
 {
   "model": "policy_api.residencepolicychoice",
-  "pk": 17,
+  "pk": 19,
   "fields": {
-    "fk_Residence": 70,
-    "fk_Policy": 6,
-    "fk_PolicyOption": 21,
-    "make_public": true
-  }
-},
-{
-  "model": "policy_api.residencepolicychoice",
-  "pk": 18,
-  "fields": {
-    "fk_Residence": 45,
+    "fk_Residence": 75,
     "fk_Policy": 1,
-    "fk_PolicyOption": 4,
+    "fk_PolicyOption": 5,
     "make_public": true
+  }
+},
+{
+  "model": "policy_api.residencepolicychoice",
+  "pk": 84,
+  "fields": {
+    "fk_Residence": 69,
+    "fk_Policy": 2,
+    "fk_PolicyOption": 2,
+    "make_public": true
+  }
+},
+{
+  "model": "policy_api.residencepolicychoice",
+  "pk": 85,
+  "fields": {
+    "fk_Residence": 72,
+    "fk_Policy": 2,
+    "fk_PolicyOption": 1,
+    "make_public": true
+  }
+},
+{
+  "model": "policy_api.residencepolicychoice",
+  "pk": 86,
+  "fields": {
+    "fk_Residence": 68,
+    "fk_Policy": 2,
+    "fk_PolicyOption": 2,
+    "make_public": false
+  }
+},
+{
+  "model": "policy_api.residencepolicychoice",
+  "pk": 95,
+  "fields": {
+    "fk_Residence": 75,
+    "fk_Policy": 2,
+    "fk_PolicyOption": 1,
+    "make_public": false
+  }
+},
+{
+  "model": "policy_api.residencepolicychoice",
+  "pk": 98,
+  "fields": {
+    "fk_Residence": 292,
+    "fk_Policy": 2,
+    "fk_PolicyOption": 2,
+    "make_public": false
   }
 }
 ]

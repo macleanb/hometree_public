@@ -19,7 +19,7 @@
   "model": "policy_api.policyoption",
   "pk": 3,
   "fields": {
-    "option_text": "Bob",
+    "option_text": "Pikachu",
     "fk_Policy": 1
   }
 },
@@ -27,7 +27,7 @@
   "model": "policy_api.policyoption",
   "pk": 4,
   "fields": {
-    "option_text": "Donald",
+    "option_text": "Rick",
     "fk_Policy": 1
   }
 },
@@ -35,7 +35,7 @@
   "model": "policy_api.policyoption",
   "pk": 5,
   "fields": {
-    "option_text": "Joe",
+    "option_text": "Morty",
     "fk_Policy": 1
   }
 },

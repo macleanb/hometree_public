@@ -26,8 +26,12 @@ const constants = {
 
                     /* For production & deployment */
                     //BASE_URL: 'http://3.142.226.144/api/v1', // elastic IP for AWS server
-                    BASE_URL: 'http://ht-demo.duckdns.org/api/v1', // free DuckDNS sub-domain
-                    IMAGE_URL: 'http://ht-demo.duckdns.org/',
+                    //BASE_URL: 'http://ht-demo.duckdns.org/api/v1', // free DuckDNS sub-domain
+                    //IMAGE_URL: 'http://ht-demo.duckdns.org/',
+
+                    /* For secure site production & deployment */
+                    BASE_URL: 'https://3.19.90.46/api/v1', // elastic IP for AWS server
+                    IMAGE_URL: 'https://3.19.90.46/',
 
                     LOGIN_URL:                        '/users/login',
                     LOGOUT_URL:                       '/users/logout',

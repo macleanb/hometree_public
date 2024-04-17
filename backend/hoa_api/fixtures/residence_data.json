@@ -1,26 +1,6 @@
 [
 {
   "model": "hoa_api.residence",
-  "pk": 45,
-  "fields": {
-    "fk_Address": 59,
-    "join_date": "2023-12-22",
-    "lat": null,
-    "lng": null
-  }
-},
-{
-  "model": "hoa_api.residence",
-  "pk": 51,
-  "fields": {
-    "fk_Address": 68,
-    "join_date": "2023-12-24",
-    "lat": null,
-    "lng": null
-  }
-},
-{
-  "model": "hoa_api.residence",
   "pk": 63,
   "fields": {
     "fk_Address": 132,
@@ -91,16 +71,6 @@
 },
 {
   "model": "hoa_api.residence",
-  "pk": 70,
-  "fields": {
-    "fk_Address": 139,
-    "join_date": "2024-01-04",
-    "lat": 38.5569853,
-    "lng": -89.9049151
-  }
-},
-{
-  "model": "hoa_api.residence",
   "pk": 71,
   "fields": {
     "fk_Address": 140,
@@ -141,12 +111,12 @@
 },
 {
   "model": "hoa_api.residence",
-  "pk": 76,
+  "pk": 292,
   "fields": {
-    "fk_Address": 145,
-    "join_date": "2024-01-28",
-    "lat": 37.3928205,
-    "lng": -122.0421487
+    "fk_Address": 627,
+    "join_date": "2024-04-16",
+    "lat": 38.5569853,
+    "lng": -89.9049151
   }
 }
 ]

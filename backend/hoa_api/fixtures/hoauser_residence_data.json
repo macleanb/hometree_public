@@ -1,42 +1,6 @@
 [
 {
   "model": "hoa_api.hoauser_residence",
-  "pk": 71,
-  "fields": {
-    "fk_HOAUser": 44,
-    "fk_Residence": 51,
-    "purchase_date": "2024-01-11"
-  }
-},
-{
-  "model": "hoa_api.hoauser_residence",
-  "pk": 72,
-  "fields": {
-    "fk_HOAUser": 42,
-    "fk_Residence": 51,
-    "purchase_date": "2024-01-11"
-  }
-},
-{
-  "model": "hoa_api.hoauser_residence",
-  "pk": 73,
-  "fields": {
-    "fk_HOAUser": 1,
-    "fk_Residence": 45,
-    "purchase_date": "2024-01-11"
-  }
-},
-{
-  "model": "hoa_api.hoauser_residence",
-  "pk": 76,
-  "fields": {
-    "fk_HOAUser": 69,
-    "fk_Residence": 70,
-    "purchase_date": "2024-01-14"
-  }
-},
-{
-  "model": "hoa_api.hoauser_residence",
   "pk": 77,
   "fields": {
     "fk_HOAUser": 70,
@@ -46,11 +10,56 @@
 },
 {
   "model": "hoa_api.hoauser_residence",
-  "pk": 78,
+  "pk": 79,
   "fields": {
-    "fk_HOAUser": 1,
+    "fk_HOAUser": 45,
+    "fk_Residence": 75,
+    "purchase_date": "2024-03-27"
+  }
+},
+{
+  "model": "hoa_api.hoauser_residence",
+  "pk": 80,
+  "fields": {
+    "fk_HOAUser": 69,
+    "fk_Residence": 64,
+    "purchase_date": "2024-03-31"
+  }
+},
+{
+  "model": "hoa_api.hoauser_residence",
+  "pk": 88,
+  "fields": {
+    "fk_HOAUser": 398,
     "fk_Residence": 69,
-    "purchase_date": "2024-01-18"
+    "purchase_date": "2024-04-06"
+  }
+},
+{
+  "model": "hoa_api.hoauser_residence",
+  "pk": 124,
+  "fields": {
+    "fk_HOAUser": 47,
+    "fk_Residence": 72,
+    "purchase_date": "2024-04-11"
+  }
+},
+{
+  "model": "hoa_api.hoauser_residence",
+  "pk": 150,
+  "fields": {
+    "fk_HOAUser": 47,
+    "fk_Residence": 68,
+    "purchase_date": "2024-04-14"
+  }
+},
+{
+  "model": "hoa_api.hoauser_residence",
+  "pk": 162,
+  "fields": {
+    "fk_HOAUser": 757,
+    "fk_Residence": 292,
+    "purchase_date": "2024-04-16"
   }
 }
 ]

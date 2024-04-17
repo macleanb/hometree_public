@@ -22,8 +22,8 @@ https://github.com/Code-Platoon-Curriculum/curriculum/blob/main/optional_lessons
    * python manage.py migrate 
    * Load fixtures (in the correct order):
     * python3 manage.py loaddata users/fixtures/auth_group_data_modified.json
-    * python3 manage.py loaddata users/fixtures/user_data.json
     * python3 manage.py loaddata address_api/fixtures/address_data.json
+    * python3 manage.py loaddata users/fixtures/user_data.json
     * python3 manage.py loaddata announcement_api/fixtures/announcement_data.json
     * python3 manage.py loaddata hoa_api/fixtures/residence_data.json
     * python3 manage.py loaddata hoa_api/fixtures/hoauser_residence_data.json

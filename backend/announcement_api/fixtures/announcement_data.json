@@ -5,9 +5,9 @@
   "fields": {
     "title": "Annual Beerfest!",
     "bodytext": "Mark your calendars!  This upcoming May will be our community's 20th annual Beerfest celebration.  Our streets and cul-de-sacs will be lined with tents, tables, and will have live music for everyone to enjoy.  One neighbor has volunteered to set up a bouncy-castle, and has even purchased insurance in case something goes horribly wrong again.  So bring your kids, your dogs, and your friends to the celebration, the weather should be great!",
-    "created_datetime": "2024-01-09T12:02:56Z",
+    "created_datetime": "2024-04-15T12:02:56Z",
     "fk_Author": 1,
-    "image": ""
+    "image": "images/campingchair_5Mh2uMj_asV5ss7_FvdN2u5_8lmfmcp_O7RBI76_CiWOxMX_4t2a6MU_g3ES0AC_Tvk4_rAhV1NA.png"
   }
 },
 {
@@ -16,9 +16,9 @@
   "fields": {
     "title": "Fall clean-up",
     "bodytext": "It's that time of year again!  Our beautiful trees have shed their leaves, and alas, they are losing their color and turning our lawns brown.  Unless we act soon, the leaves will cover our lawns and deprive them of needed sunlight before they go dormant for the winter.  Did you know that healthy looking lawns in the springtime depend on unobstructed sunlight in the late fall?  Please grab your rakes, join your neighbors, and see who can make the tallest pile of leaves!  The sooner you start, the warmer it will be outside while you rake!  Thanks for doing your part to keep our community looking great!",
-    "created_datetime": "2024-01-11T14:08:36.857Z",
+    "created_datetime": "2023-11-07T14:08:36Z",
     "fk_Author": 1,
-    "image": ""
+    "image": "images/leaves_eNOSOLC.png"
   }
 },
 {
@@ -27,9 +27,9 @@
   "fields": {
     "title": "Parking violations",
     "bodytext": "Unfortunately parking violations are on the upswing, and we don't like issuing them as much as you don't like receiving them.  There is ample parking in driveways, while parking on the street makes it difficult for garbage trucks to do their job, mail professionals to do their, job, and makes our community look trashy overall.  To help everyone create some space in their garages for their cars, we've taken the initiative to schedule a garage sale, and posted it in local newspapers so folks from outside the community can take those old items out of your garage, and give you cash in the process!",
-    "created_datetime": "2024-01-11T14:39:38.333Z",
+    "created_datetime": "2024-04-17T14:39:38Z",
     "fk_Author": 1,
-    "image": ""
+    "image": "images/parking2_IP9h4I6.jpeg"
   }
 }
 ]
