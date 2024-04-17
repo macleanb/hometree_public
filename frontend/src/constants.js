@@ -30,8 +30,8 @@ const constants = {
                     //IMAGE_URL: 'http://ht-demo.duckdns.org/',
 
                     /* For secure site production & deployment */
-                    BASE_URL: 'https://3.19.90.46/api/v1', // elastic IP for AWS server
-                    IMAGE_URL: 'https://3.19.90.46/',
+                    BASE_URL: 'https://h-demo.duckdns.org/api/v1', // elastic IP for AWS server
+                    IMAGE_URL: 'https://h-demo.duckdns.org/',
 
                     LOGIN_URL:                        '/users/login',
                     LOGOUT_URL:                       '/users/logout',
