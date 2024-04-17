@@ -82,21 +82,18 @@ npx cypress run
 
 ## TODO:
   * Frontend:
+    - User updates result in delayed success response until a different page is loaded
+    - Manage page transitions more smoothly
     - wrap backend API calls in useEffect (use 'active' variable)
-    - enable https
     - use httponly cookies (see Adam's video and demo code)
             
   * Backend:
     - re-download fixtures
-    - enable https
     - enable httponly cookies
     - Add a neighborhood chat function
   
   * Deploy:
-    - Delete all residences/users that don't belong
-    - Upload all other pictures for users/residences
-    - Populate some votes to match developmental policies
-    - get https working (watch Adam's video)
+    - 
 
   * Future Features:
   - Put the script tag from https://developers.google.com/maps/documentation/javascript/reference/advanced-markers
