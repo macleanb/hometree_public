@@ -11,6 +11,7 @@ import { useState, useEffect, useContext, useRef } from 'react';
 import AuthContext from '../contexts/AuthProvider';
 import constants from '../constants';
 import { filterUsers } from '../utils/userUtils';
+import getURL_BackendImage from '../utils/getURL_BackendImage';
 import styles from './UsersDisplay.module.css';
 
 
@@ -161,7 +162,7 @@ const UsersDisplay = (
                     <ListGroup.Item className="p-0" key={ index } action onClick={ () => handleUserClicked(obj) } variant="light">
                       <div key={ index } className="d-flex p-2 flex-wrap justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
                         <div className={`${styles.container_image_size} d-flex align-items-center`}>
-                          <img className={styles.image_size} src={ obj.image } alt="portrait"/>
+                          <img className={styles.image_size} src={ getURL_BackendImage(obj.image)  } alt="portrait"/>
                         </div>
                         <div className="d-flex flex-column justify-content-center ms-4">
                           <h5 className={`${styles.font_size_name} mt-2 mb-1 colorsettings_listtext`}><b>{ obj.last_name }, { obj.first_name }</b></h5>

@@ -13,6 +13,7 @@ import constants from '../constants';
 import { filterResidences, getAllResidencesAsDict } from '../utils/residenceUtils';
 import { getAllAddressesAsArray, getAllAddressesAsDict } from '../utils/addressUtils';
 import { getAllUsersAsDict } from '../utils/userUtils';
+import getURL_BackendImage from '../utils/getURL_BackendImage';
 import styles from './ResidencesDisplay.module.css';
 
 
@@ -308,7 +309,7 @@ const ResidencesDisplay = (
                       <ListGroup.Item className="p-0" key={ index } action onClick={ () => handleResidenceClicked(obj) } variant="light">
                         <div key={ index } className="d-flex p-2 justify-content-between colorsettings_bodybackground colorsettings_bodybackgroundhover">
                           <div className={`${styles.container_image_size} d-flex align-items-center`}>
-                            <img className={styles.image_size} src={ obj.image } alt="address"/>
+                            <img className={styles.image_size} src={ getURL_BackendImage(obj.image) } alt="address"/>
                           </div>
                           
                           <div className="d-flex flex-column justify-content-center ms-4">

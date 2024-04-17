@@ -2,6 +2,7 @@
 import ListGroup from 'react-bootstrap/ListGroup';
 
 /* Internal Imports */
+import getURL_BackendImage from '../utils/getURL_BackendImage';
 import styles from './PolicyListCard.module.css';
 
 const PolicyListCard = ({
@@ -23,7 +24,7 @@ const PolicyListCard = ({
           obj.image
           ?
             <div className="d-flex align-items-center">
-              <img src={ obj.image } width="100" height="100" alt={ label }/>
+              <img src={ getURL_BackendImage(obj.image) } width="100" height="100" alt={ label }/>
             </div>
           : ''
         }
