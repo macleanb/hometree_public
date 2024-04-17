@@ -54,6 +54,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://3.142.226.144', # AWS elastic IP
     'http://ht-demo.duckdns.org',
     'https://3.19.90.46/', # AWS elastic IP
+    'https://h-demo.duckdns.org', # secure site
     ]
 
 CORS_ALLOW_CREDENTIALS = True
