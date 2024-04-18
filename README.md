@@ -3,7 +3,7 @@
 https://github.com/Code-Platoon-Curriculum/curriculum/blob/main/optional_lessons/personal_project.md
 
 ## Database Design / Schema
-![HomeTree Database](./images/schema.png)
+![HomeTree Database](./resources/schema.png)
 
 ## Getting Started:
 
